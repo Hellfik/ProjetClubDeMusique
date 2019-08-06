@@ -10,6 +10,10 @@ body {
     background-attachment: fixed !important;
 }
 
+p {
+    color: #000;
+}
+
 a:hover {
     text-decoration: none !important;
 }
@@ -40,6 +44,7 @@ a:hover {
 .sidebar,
 .description {
     background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 7px black;
 }
 
 hr {
@@ -47,6 +52,7 @@ hr {
     background-color: #000;
 }
 
-h1 {
-    color: #000;
+h2,
+h3 {
+    color: #000 !important;
 }
