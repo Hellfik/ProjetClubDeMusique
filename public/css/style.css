@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url('../image/berck.jpg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.connexion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px white;
+    transition: .5s;
+}
+
+.connexion i {
+    font-size: 20px;
+}
+
+.connexion:hover {
+    transform: rotate(360deg);
+}
+
+.page-footer {
+    background-color: black;
+}
+
+.sidebar,
+.description {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+hr {
+    height: 3px;
+    background-color: #000;
+}
+
+h1 {
+    color: #000;
+}
