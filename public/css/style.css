@@ -56,3 +56,12 @@ h2,
 h3 {
     color: #000 !important;
 }
+
+.sidebar {
+    height: 100vh;
+    position: fixed;
+}
+
+.btn {
+    cursor: pointer;
+}

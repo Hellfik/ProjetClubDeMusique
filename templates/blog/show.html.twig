@@ -1,16 +1,15 @@
-{% extends 'base.html.twig' %} {% block title %}Blog{% endblock %} {% block body %}
+{% extends 'base.html.twig' %} {% block body %}
 <section class="description col-8 mr-2 p-5">
     <!-- Section: Blog v.1 -->
     <!-- Section heading -->
     <h2 class="h1-responsive font-weight-bold text-center my-5">Articles Recents</h2>
     <!-- Section description -->
     <p class="text-center w-responsive mx-auto mb-5">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    {% for article in articles %}
     <!-- Grid row -->
     <div class="row">
 
         <!-- Grid column -->
-        <div class="col-lg-5">
+        <div class="col-lg-12 mb-5">
 
             <!-- Featured image -->
             <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
@@ -24,7 +23,7 @@
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-lg-7">
+        <div class="col-lg-12">
 
             <!-- Category -->
             <a href="#!" class="green-text">
@@ -36,17 +35,10 @@
             <p>{{article.content}}</p>
             <!-- Post data -->
             <p>by <a><strong>Stephane Lecoutre</strong></a>, {{article.createdAt | date('d/m/Y')}} à {{article.createdAt | date('H:i')}}</p>
-            <!-- Read more button -->
-            <a href="{{path('blog_show', {'id' : article.id})}}" class="btn btn-success text-white btn-md">Lire la suite</a>
 
         </div>
         <!-- Grid column -->
 
     </div>
-    <!-- Grid row -->
-
-    <hr class="my-5"> {% endfor %}
-
-
 </section>
 {% endblock %}
