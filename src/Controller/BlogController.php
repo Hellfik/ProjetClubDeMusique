@@ -15,18 +15,22 @@ class BlogController extends AbstractController
      */
     public function blog(ArticleRepository $repo)
     {
-        $articles = $repo->findById(); 
+        $articles = $repo->findById();
+        $recentArticles = $repo->findThreeMostRecent(); 
         return $this->render('blog/blog.html.twig', [
-            'articles' => $articles
+            'articles' => $articles,
+            'recentArticles' => $recentArticles
         ]);
     }
     /**
      * @param Article $article
      * @Route("/blog/{id}", name="blog_show")
      */
-    public function show(Article $article){
+    public function show(Article $article, ArticleRepository $repo){
+        $recentArticles = $repo->findThreeMostRecent();
          return $this->render('blog/show.html.twig', [
-             'article' => $article
+             'article' => $article,
+             'recentArticles' => $recentArticles
          ]);
     }
 

@@ -32,6 +32,15 @@ class ArticleRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
+
+    public function findThreeMostRecent(){
+        return $this->createQueryBuilder('q')
+            ->orderBy('q.id', 'DESC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
     
 
     /*

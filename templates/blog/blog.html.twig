@@ -1,52 +1,62 @@
-{% extends 'base.html.twig' %} {% block title %}Blog{% endblock %} {% block body %}
-<section class="description col-8 mr-2 p-5">
-    <!-- Section: Blog v.1 -->
-    <!-- Section heading -->
-    <h2 class="h1-responsive font-weight-bold text-center my-5">Articles Recents</h2>
-    <!-- Section description -->
-    <p class="text-center w-responsive mx-auto mb-5">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+{% extends 'base.html.twig' %} {% block title %}Blog{% endblock %} 
+{% block body %}
+<section class="description col-md-8">
+    <h2 class="h1-responsive font-weight-bold text-center">Articles Recents</h2>
     {% for article in articles %}
-    <!-- Grid row -->
-    <div class="row">
-
-        <!-- Grid column -->
-        <div class="col-lg-5">
-
-            <!-- Featured image -->
-            <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
-                <img class="img-fluid" src="{{article.image}}" alt="Sample image">
-                <a>
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-
+    <div class="card mb-4 bg-white">
+        <img class="card-img-top" src="{{article.image}}" alt="Card image cap">
+        <div class="card-body">
+            <h2 class="card-title">{{article.title}}</h2>
+            <p class="card-text">{{article.content}}</p>
+            <a href="{{ path('blog_show', {'id': article.id})}}" class="btn btn-success">Lire la suite &rarr;</a>
         </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-lg-7">
-
-            <!-- Category -->
-            <a href="#!" class="green-text">
-                <h6 class="font-weight-bold mb-3 border-round"><i class="fa fa-utensils pr-2"></i>Cuisine</h6>
-            </a>
-            <!-- Post title -->
-            <h3 class="font-weight-bold mb-3"><strong>{{article.title}}</strong></h3>
-            <!-- Excerpt -->
-            <p>{{article.content}}</p>
-            <!-- Post data -->
-            <p>by <a><strong>Stephane Lecoutre</strong></a>, {{article.createdAt | date('d/m/Y')}} à {{article.createdAt | date('H:i')}}</p>
-            <!-- Read more button -->
-            <a href="{{path('blog_show', {'id' : article.id})}}" class="btn btn-success text-white btn-md">Lire la suite</a>
-
+        <div class="card-footer text-muted">
+            Posté le {{article.createdAt | date('d/m/Y')}} à {{article.createdAt | date('h:i')}}
         </div>
-        <!-- Grid column -->
-
     </div>
-    <!-- Grid row -->
 
-    <hr class="my-5"> {% endfor %}
-
-
+    {% endfor %}
 </section>
+<aside class="sidebar col-md-4 text-center">
+                        <!-- Outils de recherche -->
+                        <div class="card my-4 bg-white">
+                            <h5 class="card-header">Rechercher</h5>
+                            <div class="card-body">
+                                <div class="input-group">
+                                <input type="text" class="form-control bg-dark" placeholder="Rechercher...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-dark ml-1" type="button">Rechercher</button>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Categories Widget -->
+                        <div class="card my-4 bg-white">
+                            <h5 class="card-header">Articles Recents</h5>
+                            <div class="card-body">
+                                <div class="row">
+                                    {% for recentArticle in recentArticles %}
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <a class="col-4 img_widget mb-3 ml-2" href="{{ path('blog_show', {'id': recentArticle.id})}}">
+                                                <img src="{{recentArticle.image }}" alt="... ">
+                                            </a>
+                                            <div class="col-6 text-left">
+                                                <h6>{{recentArticle.title}}</h6>
+                                                <p><small>{{recentArticle.content | slice(0, 20)}} ...</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card my-4 bg-white">
+                            <h5 class="card-header">Infos utiles</h5>
+                            <div class="card-body">
+                               
+                            </div>
+                        </div>
+                    </aside>
 {% endblock %}
