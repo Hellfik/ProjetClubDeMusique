@@ -13,46 +13,5 @@
         </div>
     </div>
 </section>
-<aside class="sidebar col-md-4 text-center">
-    <!-- Outils de recherche -->
-    <div class="card my-4 bg-white">
-        <h5 class="card-header">Rechercher</h5>
-        <div class="card-body">
-            <div class="input-group">
-                <input type="text" class="form-control bg-dark" placeholder="Rechercher...">
-                <span class="input-group-btn">
-                    <button class="btn btn-dark ml-1" type="button">Rechercher</button>
-                </span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Categories Widget -->
-    <div class="card my-4 bg-white">
-        <h5 class="card-header">Articles Recents</h5>
-        <div class="card-body">
-            <div class="row">
-                {% for recentArticle in recentArticles %}
-                <div class="col-12">
-                    <div class="row">
-                        <a class="col-4 img_widget mb-3 ml-2" href="{{ path('blog_show', {'id': recentArticle.id})}}">
-                            <img src="{{recentArticle.image }}" alt="... ">
-                        </a>
-                        <div class="col-6 text-left">
-                            <h6>{{recentArticle.title}}</h6>
-                            <p><small>{{recentArticle.content | slice(0, 20)}} ...</small></p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    <div class="card my-4 bg-white">
-        <h5 class="card-header">Infos utiles</h5>
-        <div class="card-body">
-
-        </div>
-    </div>
-</aside>
+{{ include('blog/sidebar.html.twig')}} 
 {% endblock %}

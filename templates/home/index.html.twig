@@ -1,7 +1,5 @@
-{% extends 'base.html.twig' %} 
-{% block title %}Club de musique Berckois{% endblock %}
-{% block body %}
-    <section class="description col-8 mr-2">
-        <h1>Accueil</h1>
-    </section>
-{% endblock %}
+{% extends 'base.html.twig' %} {% block title %}Club de musique Berckois{% endblock %} {% block body %}
+<section class="description col-8">
+    <h1>Accueil</h1>
+</section>
+{{ include('blog/sidebar.html.twig')}} {% endblock %}

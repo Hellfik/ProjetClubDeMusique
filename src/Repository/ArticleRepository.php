@@ -23,6 +23,7 @@ class ArticleRepository extends ServiceEntityRepository
     //  * @return Article[] Returns an array of Article objects
     //  */
     
+    //Fonction qui permet d'aller chercher en base les 10 derniers articles et de les ordonner par id decroissant
     public function findById()
     {
         return $this->createQueryBuilder('p')
@@ -33,6 +34,7 @@ class ArticleRepository extends ServiceEntityRepository
         ;
     }
 
+    //Fonction qui permet d'aller chercher en base les 3 derniers articles et de les ordonner par id decroissant
     public function findThreeMostRecent(){
         return $this->createQueryBuilder('q')
             ->orderBy('q.id', 'DESC')
