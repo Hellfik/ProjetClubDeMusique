@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %} {% block body %}
+<div class="col-12 margin">
+    <h2 class="card-title h1">{{article.title}}</h2>
+</div>
 <section class="description col-md-8">
     <div class="card mb-5 bg-white">
         <img class="card-img-top" src="{{article.image}}" alt="Card image cap">
         <div class="card-body">
-            <h2 class="card-title">{{article.title}}</h2>
             <p class="card-text">{{article.content}}</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nemo odit eum quae explicabo, officiis cupiditate tenetur voluptate commodi magnam unde, sint, necessitatibus nostrum soluta dolorem repellendus omnis sunt culpa provident nulla
                 debitis architecto tempore. Hic molestias illum eligendi ad quam, numquam odio a facilis alias obcaecati consequuntur in vitae!</p>
@@ -13,5 +15,4 @@
         </div>
     </div>
 </section>
-{{ include('blog/sidebar.html.twig')}} 
-{% endblock %}
+{{ include('blog/sidebar.html.twig')}} {% endblock %}

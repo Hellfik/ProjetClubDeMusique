@@ -1,5 +1,12 @@
 {% extends 'base.html.twig' %} {% block title %}Club de musique Berckois{% endblock %} {% block body %}
-<section class="description col-8">
-    <h1>Accueil</h1>
+<section class="margin jumbotron text-center bg-white col-12">
+    <h1>Bienvenue sur le site du club musical de Berck-sur-mer</h1>
 </section>
-{{ include('blog/sidebar.html.twig')}} {% endblock %}
+
+<section class="row">
+    <div class="col-8">
+        <h2>Présentation</h2>
+    </div>
+    {{ include('blog/sidebar.html.twig')}}
+</section>
+{% endblock %}

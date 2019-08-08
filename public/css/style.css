@@ -41,9 +41,12 @@ a:hover {
     background-color: black;
 }
 
-.sidebar,
-.description {
+.margin {
     margin-top: 90px;
+}
+
+.margin h1 {
+    color: #262626 !important;
 }
 
 hr {
@@ -69,4 +72,8 @@ h3 {
 .img_widget img {
     width: 100%;
     height: 75px;
+}
+
+.professeur {
+    justify-content: center;
 }
