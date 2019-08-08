@@ -18,6 +18,13 @@ class HomeController extends AbstractController
             'recentArticles' => $recentArticles
         ]);
     }
+    /**
+    *@Route("/contact", name="contact") 
+    */
+    public function contact()
+    {
+        return $this->render('contact.html.twig');
+    }
 
     
 }

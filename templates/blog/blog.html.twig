@@ -1,7 +1,10 @@
-{% extends 'base.html.twig' %} {% block title %}Blog{% endblock %} 
+{% extends 'base.html.twig' %} 
+{% block title %}Blog{% endblock %} 
 {% block body %}
+<div class="col-12 margin">
+    <h2 class="h1-responsive mb-5 font-weight-bold text-center">Articles Recents</h2>
+</div>
 <section class="description col-md-8">
-    <h2 class="h1-responsive font-weight-bold text-center">Articles Recents</h2>
     {% for article in articles %}
     <div class="card mb-4 bg-white">
         <img class="card-img-top" src="{{article.image}}" alt="Card image cap">
