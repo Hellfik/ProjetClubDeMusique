@@ -14,4 +14,11 @@ class EdmController extends AbstractController
     {
         return $this->render('edm/professeur.html.twig');
     }
+
+    /**
+     *@Route("/edm/instrusments", name="instruments")
+     */
+    public function showInstruments(){
+        return $this->render('edm/instruments.html.twig');
+    }
 }
