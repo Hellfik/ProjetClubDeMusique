@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %} {% block title %}Nos musiciens{% endblock %} {% block stylesheets %}
+<link rel="stylesheet" href="{{asset('css/swiper.min.css')}}">
+<link rel="stylesheet" href="{{asset('css/edm.css')}}">{% endblock %} {% block body %}
+<div class="col-12 margin text-center">
+    <h2 class="h1 text-white">Nos musiciens</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet hic, esse minima quasi perspiciatis reiciendis repellat fuga! Nisi veritatis voluptatibus molestiae assumenda obcaecati debitis corrupti, adipisci vero magni consequatur autem? Dignissimos
+        dolorum rem dicta sint neque assumenda libero, voluptate inventore itaque ipsam eos labore ad iusto quos repudiandae, officia quisquam.</p>
+</div>
+<!-- Swiper -->
+
+<div class="swiper-container">
+
+    <div class="swiper-wrapper">
+    {% for i in 1..64 %}
+        <div class="swiper-slide">
+            <div class="card-title">
+                <h3>Image du musicien</h3>
+            </div>
+            <div class="card-content">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, libero. Numquam fuga quam amet eveniet minus, nesciunt reprehenderit, sit quia sint ad expedita magni laudantium dolore ut repudiandae tenetur. Dolorum!</p>
+                <a href="#">Read more</a>
+            </div>
+        </div>
+         {% endfor %}
+    </div>
+
+   
+</div>
+
+{% endblock %} {% block javascripts %}
+<script src="{{asset('js/swiper.min.js')}}"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    });
+</script>
+{% endblock %}

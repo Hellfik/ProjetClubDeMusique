@@ -26,5 +26,13 @@ class HomeController extends AbstractController
         return $this->render('contact.html.twig');
     }
 
+    /**
+    *@Route("/ficheTechnique", name="ficheTechnique") 
+    */
+    public function ficheTechnique()
+    {
+        return $this->render('ficheTechnique.html.twig');
+    }
+
     
 }
