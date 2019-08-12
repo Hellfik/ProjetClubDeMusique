@@ -1,0 +1,7 @@
+body {
+    background: url('../image/berck.jpg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+}
