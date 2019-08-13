@@ -34,5 +34,14 @@ class HomeController extends AbstractController
         return $this->render('ficheTechnique.html.twig');
     }
 
+    /**
+    *@Route("/historique", name="historique") 
+    */
+
+    public function historique()
+    {
+        return $this->render('historique.html.twig');
+    }
+
     
 }
