@@ -26,6 +26,11 @@ class Musiciens
      */
     private $prenom;
 
+    /**
+     * @ORM\Column(type="string", length=500, nullable=true)
+     */
+    private $photos;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +56,18 @@ class Musiciens
     public function setPrenom(string $prenom): self
     {
         $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    public function getPhotos(): ?string
+    {
+        return $this->photos;
+    }
+
+    public function setPhotos(?string $photos): self
+    {
+        $this->photos = $photos;
 
         return $this;
     }

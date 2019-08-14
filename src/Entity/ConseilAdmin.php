@@ -31,6 +31,11 @@ class ConseilAdmin
      */
     private $fonction;
 
+    /**
+     * @ORM\Column(type="string", length=500, nullable=true)
+     */
+    private $photos;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,6 +73,18 @@ class ConseilAdmin
     public function setFonction(string $fonction): self
     {
         $this->fonction = $fonction;
+
+        return $this;
+    }
+
+    public function getPhotos(): ?string
+    {
+        return $this->photos;
+    }
+
+    public function setPhotos(?string $photos): self
+    {
+        $this->photos = $photos;
 
         return $this;
     }
