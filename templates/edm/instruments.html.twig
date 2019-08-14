@@ -1,7 +1,23 @@
 {% extends 'base.html.twig' %} {% block stylesheets %}
-<link rel="stylesheet" href="{{asset('css/edm.css')}}"> {% endblock %} 
-{% block body %} 
-{% for i in 0..64 %}
- <p>* {{ i }}</p>
-{% endfor %}
+<link rel="stylesheet" href="{{asset('css/edm.css')}}"> {% endblock %} {% block body %}
+<div class="col-12 margin">
+    <h2 class="h2-responsive text-center">Les instruments que l'on enseigne</h2>
+</div>
+
+<form method="get">
+    <label for="famille">Famille D'instrument</label>
+    <select name="famille">
+        {% for famille in familleInstrument %}
+        <option value={{famille.id}}>{{famille.nom}}</option>
+        {% endfor %}
+    </select>
+    <button type="submit" class="btn btn-danger">Filtrer</button>
+</form>
+<div class="col-12">
+    <ul>
+        {% for instrument in instruments %}
+        <li>{{ instrument.nom }} | {{ instrument.familleInstruments.nom}}</li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}
