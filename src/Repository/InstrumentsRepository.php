@@ -22,19 +22,18 @@ class InstrumentsRepository extends ServiceEntityRepository
     // /**
     //  * @return Instruments[] Returns an array of Instruments objects
     //  */
-    /*
-    public function findByExampleField($value)
+
+    public function findByFamilly($value)
     {
         return $this->createQueryBuilder('i')
-            ->andWhere('i.exampleField = :val')
+            ->andWhere('i.familleInstruments = :val')
             ->setParameter('val', $value)
             ->orderBy('i.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+    
 
     /*
     public function findOneBySomeField($value): ?Instruments
