@@ -36,10 +36,10 @@
                                 Orchestre
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Sorties Annuelles</a>
-                                <a class="dropdown-item" href="{{ path('ficheTechnique')}}">Fiche Technique</a>
-                                <a class="dropdown-item" href="#">Documents d'inscription</a>
-                                <a class="dropdown-item" href="#">Tarifs Orchestre</a>
+                                <a class="dropdown-item" href="{{path('sortiesAnnuelles')}}">Sorties Annuelles</a>
+                                <a class="dropdown-item" href="{{ path('musiciens')}}">Nos musiciens</a>
+                                <a class="dropdown-item" href="{{path('documentsInscription')}}">Documents d'inscription</a>
+                                <a class="dropdown-item" href="{{path('tarifsOrchestre')}}">Tarifs Orchestre</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -48,8 +48,8 @@
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ path('historique')}}">Page Historique</a>
-                                <a class="dropdown-item" href="#">Page mécénat</a>
-                                <a class="dropdown-item" href="#">Page revue de presse</a>
+                                <a class="dropdown-item" href="{{path('mecenat')}}">Page mécénat</a>
+                                <a class="dropdown-item" href="{{path('revuePresse')}}">Page revue de presse</a>
                             </div>
                         </li>
                         <li class="nav-item">
