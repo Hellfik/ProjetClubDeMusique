@@ -22,6 +22,17 @@ class FamilleInstrumentsRepository extends ServiceEntityRepository
     // /**
     //  * @return FamilleInstruments[] Returns an array of FamilleInstruments objects
     //  */
+
+    /**
+     * Return le nombre de famille dans la bdd
+     */
+    public function numberOfFamilly(){
+        return $this->createQueryBuilder('u')
+            ->select('count(u.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
     /*
     public function findByExampleField($value)
     {
