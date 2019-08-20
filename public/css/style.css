@@ -20,7 +20,7 @@ a:hover {
 }
 
 footer {
-    background-color: #262626 !important;
+    background-color: #000 !important;
 }
 
 .connexion {
@@ -69,8 +69,6 @@ footer {
     height: 2px;
     width: 100%;
 }
-
-.navbar.navbar-expand-lg.fixed-top li:hover {}
 
 .banner {
     position: relative;
@@ -162,4 +160,12 @@ h3 {
     justify-content: center;
 }
 
-/* Start http://www.cursors-4u.com */ * {cursor: url(http://cur.cursors-4u.net/others/oth-5/oth480.cur), auto !important;} /* End http://www.cursors-4u.com */
+
+/* Start http://www.cursors-4u.com */
+
+* {
+    cursor: url(http://cur.cursors-4u.net/others/oth-5/oth480.cur), auto !important;
+}
+
+
+/* End http://www.cursors-4u.com */

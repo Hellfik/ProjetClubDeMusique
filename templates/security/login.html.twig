@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %} {% block title %}Club de musique de Berck - Login{% endblock %} {% block body %} {% block stylesheets %}
+<link rel="stylesheet" href="{{asset('css/security.css')}}">{% endblock %}
+<div class="container">
+    <div class="col-12 margin ">
+        <div class="box">
+            {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+            {% endfor %}
+            <h2 class="cover-heading" id="test">Se connecter</h2>
+            <form action="{{ path('security_login')}}" method="POST">
+                <div class="inputBox">
+                    <label for="username"><i class="fa fa-at"></i></label>
+                    <input type="email" name="_username" id="username" placeholder="Email" autofocus required>
+                </div>
+                <div class="inputBox">
+                    <label for="password"><i class="fa fa-lock"></i></label>
+                    <input type="password" name="_password" id="password" placeholder="Mot de passe" required>
+                </div>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <div class="inputBox">
+                    <button type="submit" class="btn btn-success mt-4">Connexion</button>
+                </div>
+            </form>
+            <div class="row mt-3">
+                <div class="col-sm-6 text-center text-white"><a href="{{path('security_registration')}}" class="text-white form-link">Pas encore inscrit ?</a></div>
+                <div class="col-sm-6 text-center text-white"><a href="#" class="text-white form-link">Mot de passe oublié ?</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

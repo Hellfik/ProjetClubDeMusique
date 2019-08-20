@@ -59,8 +59,11 @@
                             <a class="nav-link" href="{{ path('contact')}}">Contact</a>
                         </li>
                     </ul>
-                    <a href="#" class="text-dark float-right mr-4 connexion"><i class="fa fa-user"></i></a>
-                    
+                    {% if not app.user %}
+                    <a href="{{ path('security_login')}}" class="text-dark float-right mr-4 connexion"><i class="fa fa-user"></i></a>
+                    {% else %}
+                     <a href="{{ path('security_logout')}}">Deconnexion</a>
+                    {% endif %}
                 </div>
             </nav>
             <div class="container-fluid main text-dark">
@@ -69,8 +72,9 @@
                     {% endblock %}
                 </div>
             </div>
-            <footer class="page-footer">
+            <footer class="page-footer" style="background-color:#000;">
                 <div class="container-fluid p-5">
+                    <hr class="text-center">
                     <h1>Footer</h1>
                 </div>
             </footer>
