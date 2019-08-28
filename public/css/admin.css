@@ -1,0 +1,31 @@
+.navbar.navbar-expand-lg.navbar-dark {
+    background-color: #cc0000 !important;
+    border: none !important;
+}
+
+.d-flex {
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-item:hover {
+    background-color: #cc0000;
+}
+
+.header {
+    background-color: #262626;
+}
+
+.btn-widget {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-widget:hover {
+    color: white !important;
+}
+
+.count-widget .fa,
+.count-widget span {
+    font-size: 30px;
+}

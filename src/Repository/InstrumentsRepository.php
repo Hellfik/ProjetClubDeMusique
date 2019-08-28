@@ -34,6 +34,15 @@ class InstrumentsRepository extends ServiceEntityRepository
         ;
     }
     
+     /**
+     * Return le nombre d'instruments dans la bdd
+     */
+    public function numberOfInstruments(){
+        return $this->createQueryBuilder('i')
+            ->select('count(i.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
 
     /*
     public function findOneBySomeField($value): ?Instruments

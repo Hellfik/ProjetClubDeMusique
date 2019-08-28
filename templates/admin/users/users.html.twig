@@ -1,0 +1,51 @@
+{% extends 'adminBase.html.twig' %} {% block body %}
+
+<div class="card col-md-8 mx-auto my-5 px-0">
+    <div class="card-header bg-success">
+        <h2>Gérer les Utilisateurs</h2>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title text-center">La liste complète des utilisateurs</h5>
+        <div class="card-text table-responsive">
+            <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0">
+                <thead>
+                    <tr class="text-center">
+                        <th class="th-sm">#</th>
+                        <th class="th-sm">Username
+                        </th>
+                        <th class="th-sm">Email
+                        </th>
+                        <th class="th-sm">Role
+                        </th>
+                        <th colspan="2" class="th-sm">Actions
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% set compteur = 0 %}
+                    {% for user in users %}
+                    {% if user.username == app.user.username %}
+                    {% else %}
+                    <tr class="text-center h-100">
+                    {% set compteur = compteur + 1 %}
+                        <td class="align-middle">{{ compteur }}</td>
+                        <td class="align-middle">{{user.username}}</td>
+                        <td class="align-middle">{{user.email}}</td>
+                        <td class="align-middle">{% for role in user.roles %} {{role | lower}} {% endfor %}
+                        </td>
+                        <td colspan="2"><a href="{{path('admin_edit_user', {'id' : user.id})}}" class="btn btn-success m-2">Modifier</a><a href="{{path('admin_delete_user', {'id' : user.id})}}" class="btn btn-danger m-2">Supprimer</a></td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <ul>
+    </div>
+</div>
+
+{% endblock %}

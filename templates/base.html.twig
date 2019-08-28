@@ -59,10 +59,10 @@
                             <a class="nav-link" href="{{ path('contact')}}">Contact</a>
                         </li>
                     </ul>
-                    {% if not app.user %}
-                    <a href="{{ path('security_login')}}" class="text-dark float-right mr-4 connexion"><i class="fa fa-user"></i></a>
-                    {% else %}
+                    {% if is_granted('ROLE_USER') %}
                      <a href="{{ path('security_logout')}}">Deconnexion</a>
+                    {% else %}
+                    <a href="{{ path('security_login')}}" class="text-dark float-right mr-4 connexion"><i class="fa fa-user"></i></a>
                     {% endif %}
                 </div>
             </nav>
