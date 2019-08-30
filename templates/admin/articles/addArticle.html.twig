@@ -1,25 +1,24 @@
-{% extends 'adminBase.html.twig' %} {% block body %}
+{% extends 'adminBase.html.twig'%} {% block body %}
 <div class="card col-md-8 mx-auto my-5 px-0">
     <div class="card-header bg-success">
-        <h2>Modifier l'utilisateur {{user.username}}</h2>
+        <h2>Ajouter un article </h2>
     </div>
     <div class="card-body">
         <div class="container">
-            <h5 class="card-title text-center">{{user.username | upper}}</h5>
             <div class="card-text">
                 {{ form_start(form)}}
                 <div class="form-group">
-                    {{form_row(form.username, {'attr' : {'class' : 'form-control'}})}}
+                    {{form_row(form.title, {'attr' : {'class' : 'form-control'}})}}
                 </div>
                 <div class="form-group">
-                    {{form_row(form.email, {'attr' : {'class' : 'form-control'}})}}
+                    {{form_row(form.content, {'attr' : {'class' : 'form-control'}})}}
                 </div>
                 <div class="form-group">
-                    {{form_row(form.roles)}}
+                    {{form_row(form.image, {'attr' : {'class' : 'form-control'}})}}
                 </div>
             </div>
             <div class="form-group">
-                <button class="btn btn-success">Modifier</button>
+                <button class="btn btn-success">Ajouter</button>
             </div>
             {{form_end(form)}}
         </div>

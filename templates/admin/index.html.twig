@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <button type="button" class="btn btn-primary btn-lg btn-block my-3"><i class="fa fa-plus px-2"></i>Ajouter un article</button>
+                <a href="{{path('admin_addArticle')}}" type="button" class="btn btn-primary btn-lg btn-block my-3"><i class="fa fa-plus px-2"></i>Ajouter un article</a>
             </div>
             <div class="col-md-4">
                 <button type="button" class="btn btn-success btn-lg btn-block my-3"><i class="fa fa-plus px-2"></i>Ajouter un instrument</button>
@@ -48,7 +48,7 @@
                     <div class="card-body count-widget">
                         <h5 class="card-title">Articles</h5>
                         <p class="card-text"><i class="fa fa-align-center mx-2"></i><span>{{posts}}</span></p>
-                        <a href=" " class="btn btn-widget">Voir</a>
+                        <a href="{{path('admin_articles')}}" class="btn btn-widget">Voir</a>
 
                     </div>
                 </div>

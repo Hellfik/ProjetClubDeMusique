@@ -25,9 +25,10 @@
                         </a>
                         <div class="col-6 text-left">
                             <h6>{{recentArticle.title}}</h6>
-                            <p><small>{{recentArticle.content | slice(0, 20)}} ...</small></p>
+                            <p style="color:inherit;"><em>{{ recentArticle.createdAt | date('d/m/Y')}}</em></p>
                         </div>
                     </div>
+                    <hr style="background-color:#eee; width:80%;">
                 </div>
                 {% endfor %}
             </div>

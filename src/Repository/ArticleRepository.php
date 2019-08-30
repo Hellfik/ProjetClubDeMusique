@@ -22,8 +22,15 @@ class ArticleRepository extends ServiceEntityRepository
     // /**
     //  * @return Article[] Returns an array of Article objects
     //  */
+
+    public function findAllByDate(){
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.createdAt', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
     
-    //Fonction qui permet d'aller chercher en base les 10 derniers articles et de les ordonner par id decroissant
+    //Fonction qui permet d'aller chercher en base les 5 derniers articles et de les ordonner par id decroissant
     public function findById()
     {
         return $this->createQueryBuilder('p')
