@@ -6,6 +6,10 @@ use App\Entity\User;
 use App\Form\UserType;
 use App\Entity\Article;
 use App\Form\ArticleType;
+use App\Form\FamilleType;
+use App\Entity\Instruments;
+use App\Form\InstrumentType;
+use App\Entity\FamilleInstruments;
 use App\Repository\UserRepository;
 use App\Repository\ArticleRepository;
 use App\Repository\InstrumentsRepository;
@@ -153,6 +157,154 @@ class AdminController extends AbstractController
         }
 
         return $this->render('admin/articles/addArticle.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("admin/instruments", name="admin_instruments")
+     */
+
+    public function showInstruments(InstrumentsRepository $repo){
+        $instruments = $repo->findAll();
+        return $this->render('admin/instruments/instruments.html.twig',[
+            'instruments' => $instruments
+        ]);
+    }
+
+    /**
+     * @Route("admin/editInstruments/{id}", name="admin_edit_instrument")
+     */
+    public function editInstrument(Instruments $instrument, ObjectManager $manager, Request $request){
+
+        $form = $this->createForm(InstrumentType::class, $instrument);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            $manager->persist($instrument);
+            $manager->flush();
+
+            return $this->redirectToRoute('admin_instrument');
+        }
+
+        return $this->render('admin/instruments/editInstrument.html.twig', [
+            'form' => $form->createView(),
+            'instrument' => $instrument
+        ]);
+
+    }
+
+    /**
+     * @Route("admin/deleteInstrument/{id}", name="admin_delete_instrument")
+     */
+
+     public function deleteInstrument(Instruments $instrument, ObjectManager $manager){
+        $manager->remove($instrument);
+        $manager->flush();
+
+        return $this->redirectToRoute('admin_instruments');
+     }
+
+    /**
+     * 
+     * Fonction qui permet de créer des instruments via un formulaire 
+     * @Route("/admin/addInstrument", name="admin_addInstrument")
+     * 
+     */
+    public function addInstrument(Request $request, ObjectManager $manager){
+        //Créé une nouvelle instance de la classe Instruments
+        $instrument = new Instruments();
+
+        //Créé un formulaire avec les inputs necessaires à la création d'un instrument et le lie à la nouvelle instance
+        $form = $this->createForm(InstrumentType::class, $instrument);
+
+        //Permet de gérer la soumission du formulaire
+        $form->handleRequest($request);
+        
+        //Vérifie si le formulaire a été soumis et qu'il est valide
+        if($form->isSubmitted() && $form->isValid()){
+            
+            //Prépare la requete d'insertion en base de données
+            $manager->persist($instrument);
+            //Insert le nouvel instrument en base
+            $manager->flush();
+            //Une fois l'operation insertion terminée, on est redirigé vers la page des instruments
+            return $this->redirectToRoute('instruments');
+        }
+        return $this->render('admin/instruments/addInstrument.html.twig', [
+            'formInstrument' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("admin/familleInstrument", name="admin_famille")
+     */
+    public function showFamille(FamilleInstrumentsRepository $repo){
+        $familles = $repo->findAll();
+
+        return $this->render('admin/familles/familles.html.twig',[
+            'familles' => $familles
+        ]);
+    }
+
+    /**
+     * @Route("admin/editFamilleInstruments/{id}", name="admin_editFamilleInstrument")
+     */
+    public function editFamille(FamilleInstruments $familleInstrument, ObjectManager $manager, Request $request){
+
+        $form = $this->createForm(FamilleType::class, $familleInstrument);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            $manager->persist($familleInstrument);
+            $manager->flush();
+
+            return $this->redirectToRoute('admin_famille');
+        }
+
+        return $this->render('admin/familles/editFamilleInstrument.html.twig', [
+            'form' => $form->createView(),
+            'familleInstrument' => $familleInstrument
+        ]);
+
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param FamilleInstruments $famille
+     * @param ObjectManager $manager
+     * @Route("admin/deleteFamille/{id}", name="admin_delete_familleInstrument")
+     */
+    public function deleteFamille(FamilleInstruments $famille, ObjectManager $manager){
+        $manager->remove($famille);
+        $manager->flush();
+
+        return $this->redirectToRoute('admin_famille');
+    }
+    /**
+     * Undocumented function
+     *
+     * @param Request $request
+     * @param ObjectManager $manager
+     * @Route("admin/addFamille", name="admin_addFamille")
+     */
+    public function addFamille(Request $request, ObjectManager $manager){
+        $famille = new FamilleInstruments();
+
+        $form = $this->createForm(FamilleType::class, $famille);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $manager->persist($famille);
+            $manager->flush();
+
+            return $this->redirectToRoute('admin_famille');
+        }
+
+        return $this->render('admin/familles/addFamille.html.twig',[
             'form' => $form->createView()
         ]);
     }
