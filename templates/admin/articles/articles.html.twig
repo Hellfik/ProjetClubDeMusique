@@ -2,14 +2,17 @@
 <div class="card col-md-8 mx-auto my-5 px-0">
     <div class="card-header bg-success">
         <h2>Gérer les Articles</h2>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
+        <form class="form-inline my-2 my-lg-0" method="GET">
+            {% if send %}
+            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Rechercher" aria-label="Search" value="{{search}}"> {% else %}
+            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Rechercher" aria-label="Search"> {% endif %}
             <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Rechercher</button>
         </form>
     </div>
     <div class="card-body">
         <h5 class="card-title text-center">La liste complète des articles</h5>
         <div class="card-text table-responsive">
+            {% if articles | length > 0 %}
             <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0">
                 <thead>
                     <tr class="text-center">
@@ -27,7 +30,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% set compteur = 0 %} {% for article in articles %}
+                    {% set compteur = 0 %}
+                    {% for article in articles %}
                     <tr class="text-center h-100">
                         {% set compteur = compteur + 1 %}
                         <td class="align-middle">{{ compteur }}</td>
@@ -41,6 +45,9 @@
                     {% endfor %}
                 </tbody>
             </table>
+            {% else %}
+                <h4>Aucun résultat...</h4>
+            {% endif %}
         </div>
         <ul>
     </div>

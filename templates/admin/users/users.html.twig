@@ -3,8 +3,10 @@
 <div class="card col-md-8 mx-auto my-5 px-0">
     <div class="card-header bg-success">
         <h2>Gérer les Utilisateurs</h2>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
+        <form class="form-inline my-2 my-lg-0" method='GET'>
+            {% if send %}
+            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Rechercher" aria-label="Search" value="{{search}}"> {% else %}
+            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Rechercher" aria-label="Search"> {% endif %}
             <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Rechercher</button>
         </form>
     </div>

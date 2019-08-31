@@ -47,9 +47,23 @@ class AdminController extends AbstractController
      */
 
     public function showUsers(UserRepository $repo){
-        $users = $repo->findAll();
+        //Si l'utilisateur a entré une recherche
+        if(isset($_GET['search']) && !empty($_GET['search'])){
+            //Requete en fonction de la recherche de l'utilisateur
+            $users = $repo->findFilter($_GET['search']);
+            //Stock la recherche dans une variable
+            $search = $_GET['search'];
+            //Permet de savoir si une requete SQL a été envoyée
+            $send = true;
+        }else{
+            $users = $repo->findAll();
+            $search = null;
+            $send = false;
+        }
         return $this->render('admin/users/users.html.twig',[
-            'users' => $users
+            'users' => $users,
+            'search' => $search,
+            'send' => $send
         ]);
     }
 
@@ -97,9 +111,20 @@ class AdminController extends AbstractController
      */
 
     public function showArticles(ArticleRepository $repo){
-        $articles = $repo->findAllByDate();
+        if(isset($_GET['search']) && !empty($_GET['search'])){
+            $articles = $repo->findFilter($_GET['search']);
+            $search = $_GET['search'];
+            $send = true;
+        }else{
+            $articles = $repo->findAllByDate();
+            $search = null;
+            $send = false;
+        }
+        
         return $this->render('admin/articles/articles.html.twig',[
-            'articles' => $articles
+            'articles' => $articles,
+            'search' => $search,
+            'send' => $send,
         ]);
     }
 

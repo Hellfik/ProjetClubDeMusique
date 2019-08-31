@@ -52,13 +52,28 @@ class ArticleRepository extends ServiceEntityRepository
     }
     
      /**
-     * Return le nombre de famille dans la bdd
+     * Return le nombre d'article dans la bdd
      */
     public function numberOfPosts(){
         return $this->createQueryBuilder('p')
             ->select('count(p.id)')
             ->getQuery()
             ->getSingleScalarResult();
+    }
+
+    /**
+     * Retourne la les resultats de la recherche
+     */
+
+    public function findFilter($search){
+        return $this->createQueryBuilder('p')
+                    ->where('p.title like :search')
+                    ->orWhere('p.content like :search')
+                    ->setParameter('search', '%' . $search . '%')
+                    ->orderBy('p.createdAt')
+                    ->getQuery()
+                    ->getResult()
+                    ;
     }
 
     /*

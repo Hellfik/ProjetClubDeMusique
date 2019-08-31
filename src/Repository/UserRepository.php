@@ -39,6 +39,19 @@ class UserRepository extends ServiceEntityRepository
             ->getSingleScalarResult();
     }
 
+    /**
+     * Retourne la les resultats de la recherche
+     */
+
+    public function findFilter($search){
+        return $this->createQueryBuilder('u')
+                    ->where('u.username like :search')
+                    ->setParameter('search', '%' . $search . '%')
+                    ->getQuery()
+                    ->getResult()
+                    ;
+    }
+
     // /**
     //  * @return User[] Returns an array of User objects
     //  */
