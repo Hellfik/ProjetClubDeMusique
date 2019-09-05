@@ -15,6 +15,10 @@ body {
     padding-bottom: 50px;
 }
 
+.swipper-wrapper {
+    z-index: 6;
+}
+
 .swiper-slide {
     width: 400px;
     height: 500px;

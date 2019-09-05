@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\ConseilAdmin;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+
 
 /**
  * @method ConseilAdmin|null find($id, $lockMode = null, $lockVersion = null)

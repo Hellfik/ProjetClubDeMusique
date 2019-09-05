@@ -1,227 +1,229 @@
 {% extends 'base.html.twig' %}  {% block stylesheets%}
-<link rel="stylesheet" href="{{asset('css/swiper.min.css')}}">
+
 <link rel="stylesheet" href="{{asset('css/dateline.css')}}">
 {% endblock %}
 
 {% block body %}
-<section class="margin jumbotron bg-white col-12">
+
+<section class="margin container bg-white col-8">
     <header>
         <h1>Historique</h1>
     </header>
-       <div class="timeline-container">
+  <div class="timeline-container">
 
-  <ul class="timeline">
-  <!-- Item 1 -->
-  <li>
-    <div class="direction-r">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">Création</span></span>
-      </div>
-      <div class="desc">Fondée par Napoléon III, dépendant de la Garde Nationale, la première musique de Berck avait pour Chef Mr de RIQUEBOURG.</div>
-    </div>
-  </li>
+      <ul class="timeline">
+        <!-- Item 1 -->
+        <li>
+          <div class="direction-r">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">Création</span></span>
+            </div>
+            <div class="desc">Fondée par Napoléon III, dépendant de la Garde Nationale, la première musique de Berck avait pour Chef Mr de RIQUEBOURG.</div>
+          </div>
+        </li>
 
-  <!-- Item 2 -->
-  <li>
-    <div class="direction-l">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">1896</span></span>
-      </div>
-      <div class="desc">Le Conseil Municipal décide la mise en place d'un Comité directeur sous la Présidence de Mr AVISSE. " Les fêtes du centenaire " seront la dernière manifestation musicale avant la dissolution, et la restitution des instruments à la commune.</div>
-    </div>
-  </li>
+        <!-- Item 2 -->
+        <li>
+          <div class="direction-l">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">1896</span></span>
+            </div>
+            <div class="desc">Le Conseil Municipal décide la mise en place d'un Comité directeur sous la Présidence de Mr AVISSE. " Les fêtes du centenaire " seront la dernière manifestation musicale avant la dissolution, et la restitution des instruments à la commune.</div>
+          </div>
+        </li>
 
-  <!-- Item 3 -->
-  <li>
-    <div class="direction-r">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">1909</span></span>
-      </div>
-      <div class="desc">Mr POSTEL constitue une fanfare de 55 exécutants qui prend le nom d'Harmonie Municipale.</div>
-    </div>
-  </li>
+        <!-- Item 3 -->
+        <li>
+          <div class="direction-r">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">1909</span></span>
+            </div>
+            <div class="desc">Mr POSTEL constitue une fanfare de 55 exécutants qui prend le nom d'Harmonie Municipale.</div>
+          </div>
+        </li>
 
-  <!-- Item 4 -->
-  <li>
-    <div class="direction-l">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">1913</span></span>
-      </div>
-      <div class="desc">Crise interne et musiciens démissionnaires, l'Harmonie cesse son activité. Une nouvelle formation " l'indépendante " voit le jour sous la direction de Mr Eugène LANDAIS.</div>
-    </div>
-  </li>
+        <!-- Item 4 -->
+        <li>
+          <div class="direction-l">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">1913</span></span>
+            </div>
+            <div class="desc">Crise interne et musiciens démissionnaires, l'Harmonie cesse son activité. Une nouvelle formation " l'indépendante " voit le jour sous la direction de Mr Eugène LANDAIS.</div>
+          </div>
+        </li>
 
-  <!-- Item 5 -->
-  <li>
-    <div class="direction-r">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">1914/1918</span></span>
-      </div>
-      <div class="desc">Interruption des activités musicales berckoises.</div>
-    </div>
-  </li>
+        <!-- Item 5 -->
+        <li>
+          <div class="direction-r">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">1914/1918</span></span>
+            </div>
+            <div class="desc">Interruption des activités musicales berckoises.</div>
+          </div>
+        </li>
 
-  <!-- Item 6 -->
-  <li>
-    <div class="direction-l">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">1920</span></span>
-      </div>
-      <div class="desc">Charles BUREAU, ancien sous chef de " l'indépendante " crée une nouvelle formation " l'Harmonie de Berck " avec pour Président Mr DEMORTAIN.</div>
-    </div>
-  </li>
+        <!-- Item 6 -->
+        <li>
+          <div class="direction-l">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">1920</span></span>
+            </div>
+            <div class="desc">Charles BUREAU, ancien sous chef de " l'indépendante " crée une nouvelle formation " l'Harmonie de Berck " avec pour Président Mr DEMORTAIN.</div>
+          </div>
+        </li>
 
-  <!-- Item 7 -->
-  <li>
-    <div class="direction-r">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">1922</span></span>
-      </div>
-      <div class="desc">Lors de l'assemblée générale, création d'une association privée à but non lucratif <strong>LE CLUB MUSICAL BERCKOIS est né le 24 Janvier 1923</strong> avec Mr GALLET à la Présidencce et Mr BARBE à la direction. Se succéderont à la Présidence Messieurs LAMBREXCQ, Urbain ROUSSEAU, Michel MALINGRE et à la direction les chefs LEBLOND, PATIN et DUBOIS.</div>
-    </div>
-  </li>
+        <!-- Item 7 -->
+        <li>
+          <div class="direction-r">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">1922</span></span>
+            </div>
+            <div class="desc">Lors de l'assemblée générale, création d'une association privée à but non lucratif <strong>LE CLUB MUSICAL BERCKOIS est né le 24 Janvier 1923</strong> avec Mr GALLET à la Présidencce et Mr BARBE à la direction. Se succéderont à la Présidence Messieurs LAMBREXCQ, Urbain ROUSSEAU, Michel MALINGRE et à la direction les chefs LEBLOND, PATIN et DUBOIS.</div>
+          </div>
+        </li>
 
-  <!-- Item 8 -->
-  <li>
-    <div class="direction-l">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">1932</span></span>
-      </div>
-      <div class="desc">L'effectif est alors de 100 musiciens.</div>
-    </div>
-  </li>
+        <!-- Item 8 -->
+        <li>
+          <div class="direction-l">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">1932</span></span>
+            </div>
+            <div class="desc">L'effectif est alors de 100 musiciens.</div>
+          </div>
+        </li>
 
-  <!-- Item 9 -->
-  <li>
-    <div class="direction-r">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">1939/1940</span></span>
-      </div>
-      <div class="desc">La guerre vient interrompre de nouveau toute activité.</div>
-    </div>
-  </li>
+        <!-- Item 9 -->
+        <li>
+          <div class="direction-r">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">1939/1940</span></span>
+            </div>
+            <div class="desc">La guerre vient interrompre de nouveau toute activité.</div>
+          </div>
+        </li>
 
-  <!-- Item 10 -->
-  <li>
-    <div class="direction-l">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">1945</span></span>
-      </div>
-      <div class="desc">Reprise des répétitions sous la direction de Mr CREPIN qui la transmettra à Mr Fernand SOUQUE. La Présidence est assurée par Mrs BAI et DECLERCQ. Succession de plusieurs Présidents : Mrs CORBILLON, MAILLARD, GUFFROY et VASSEUR.</div>
-    </div>
-  </li>
+        <!-- Item 10 -->
+        <li>
+          <div class="direction-l">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">1945</span></span>
+            </div>
+            <div class="desc">Reprise des répétitions sous la direction de Mr CREPIN qui la transmettra à Mr Fernand SOUQUE. La Présidence est assurée par Mrs BAI et DECLERCQ. Succession de plusieurs Présidents : Mrs CORBILLON, MAILLARD, GUFFROY et VASSEUR.</div>
+          </div>
+        </li>
 
-  <!-- Item 11 -->
-  <li>
-    <div class="direction-r">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">1971</span></span>
-      </div>
-      <div class="desc">Décès de Mr SOUQUE, l'Harmonie est dirigée par Mr CROIX puis Mr LORIDANT.</div>
-    </div>
-  </li>
+        <!-- Item 11 -->
+        <li>
+          <div class="direction-r">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">1971</span></span>
+            </div>
+            <div class="desc">Décès de Mr SOUQUE, l'Harmonie est dirigée par Mr CROIX puis Mr LORIDANT.</div>
+          </div>
+        </li>
 
-  <!-- Item 12 -->
-  <li>
-    <div class="direction-l">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">1973</span></span>
-      </div>
-      <div class="desc">Année de grands changements, après de gros ^problèmes d'effectif. Election de Mr Bernard ADELINE, conseiller municipal à la Présidence sous son impulsion création de l'école de musique, La Direction est confiée à Daniel HAUSPIE. En Juin, inauguration d'une salle de musique, mise à disposition du Club par la municipalité de Berck sur Mer. Cette même année les premières femmes font leurs entrées parmi les musiciens.</div>
-    </div>
-  </li>
+        <!-- Item 12 -->
+        <li>
+          <div class="direction-l">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">1973</span></span>
+            </div>
+            <div class="desc">Année de grands changements, après de gros ^problèmes d'effectif. Election de Mr Bernard ADELINE, conseiller municipal à la Présidence sous son impulsion création de l'école de musique, La Direction est confiée à Daniel HAUSPIE. En Juin, inauguration d'une salle de musique, mise à disposition du Club par la municipalité de Berck sur Mer. Cette même année les premières femmes font leurs entrées parmi les musiciens.</div>
+          </div>
+        </li>
 
-  <!-- Item 13 -->
-  <li>
-    <div class="direction-r">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">1974</span></span>
-      </div>
-      <div class="desc">L'effectif remonte, dirigé par Daniel HAUSPIE, le répetoire se modernise et le premier concert de printemps est donné.</div>
-    </div>
-  </li>
+        <!-- Item 13 -->
+        <li>
+          <div class="direction-r">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">1974</span></span>
+            </div>
+            <div class="desc">L'effectif remonte, dirigé par Daniel HAUSPIE, le répetoire se modernise et le premier concert de printemps est donné.</div>
+          </div>
+        </li>
 
-  <!-- Item 14 -->
-  <li>
-    <div class="direction-l">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">1983</span></span>
-      </div>
-      <div class="desc">Mr César BOROWIAK, conseiller municipal est nommé Président. Il poursuit l'oeuvre entreprise, l'école de musique voit son effectif grossir, 3 postes de professeurs sont crées.</div>
-    </div>
-  </li>
+        <!-- Item 14 -->
+        <li>
+          <div class="direction-l">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">1983</span></span>
+            </div>
+            <div class="desc">Mr César BOROWIAK, conseiller municipal est nommé Président. Il poursuit l'oeuvre entreprise, l'école de musique voit son effectif grossir, 3 postes de professeurs sont crées.</div>
+          </div>
+        </li>
 
-  <!-- Item 15 -->
-  <li>
-    <div class="direction-r">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">1992</span></span>
-      </div>
-      <div class="desc">1 ère femme à présider aux destinées du Club, Mme Josiane COURION est  élue présidente. Le point d'orgue de cette année est l'accueil du " concours national-festival de Berck ".</div>
-    </div>
-  </li>
+        <!-- Item 15 -->
+        <li>
+          <div class="direction-r">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">1992</span></span>
+            </div>
+            <div class="desc">1 ère femme à présider aux destinées du Club, Mme Josiane COURION est  élue présidente. Le point d'orgue de cette année est l'accueil du " concours national-festival de Berck ".</div>
+          </div>
+        </li>
 
-  <!-- Item 16 -->
-  <li>
-    <div class="direction-l">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">1994</span></span>
-      </div>
-      <div class="desc">Le comité sous l'impulsion de la Présidente décide de réviser les statuts de l'association mis en place depuis 1933. Toujours dirigé par Daniel HAUSPIE, l'harmonie avec ses 70 musiciens porte la renommée de la musique à Berck sur Mer. L'école de musique compte 120 élèves.</div>
-    </div>
-  </li>
+        <!-- Item 16 -->
+        <li>
+          <div class="direction-l">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">1994</span></span>
+            </div>
+            <div class="desc">Le comité sous l'impulsion de la Présidente décide de réviser les statuts de l'association mis en place depuis 1933. Toujours dirigé par Daniel HAUSPIE, l'harmonie avec ses 70 musiciens porte la renommée de la musique à Berck sur Mer. L'école de musique compte 120 élèves.</div>
+          </div>
+        </li>
 
-  <!-- Item 17 -->
-  <li>
-    <div class="direction-r">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">2001</span></span>
-      </div>
-      <div class="desc">Suivant son souhait, Daniel HAUSPIE quitte la direction de l'Harmonie et de l'école. Il est remplacé par Frédéric DELMOTTE musicien issue de l'Harmonie.</div>
-    </div>
-  </li>
+        <!-- Item 17 -->
+        <li>
+          <div class="direction-r">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">2001</span></span>
+            </div>
+            <div class="desc">Suivant son souhait, Daniel HAUSPIE quitte la direction de l'Harmonie et de l'école. Il est remplacé par Frédéric DELMOTTE musicien issue de l'Harmonie.</div>
+          </div>
+        </li>
 
-  <!-- Item 18 -->
-  <li>
-    <div class="direction-l">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">2002</span></span>
-      </div>
-      <div class="desc">Démission de Mme COURION, Mr Claude DOUET, secrétaire depuis 1983 devient Président. Il est le premier musicien de l'Harmonie à accéder à ce poste. L'effectif est alors de 55 musiciens.</div>
-    </div>
-  </li>
+        <!-- Item 18 -->
+        <li>
+          <div class="direction-l">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">2002</span></span>
+            </div>
+            <div class="desc">Démission de Mme COURION, Mr Claude DOUET, secrétaire depuis 1983 devient Président. Il est le premier musicien de l'Harmonie à accéder à ce poste. L'effectif est alors de 55 musiciens.</div>
+          </div>
+        </li>
 
-  <!-- Item 19 -->
-  <li>
-    <div class="direction-r">
-      <div class="flag-wrapper">
-        <span class="hexa"></span>
-        <span class="time-wrapper"><span class="time">2011</span></span>
-      </div>
-      <div class="desc">Mr LAGACHE Judicaël, est élu Président du Club Musical Berckois.</div>
-    </div>
-  </li>
-</ul>
-
-
+        <!-- Item 19 -->
+        <li>
+          <div class="direction-r">
+            <div class="flag-wrapper">
+              <span class="hexa"></span>
+              <span class="time-wrapper"><span class="time">2011</span></span>
+            </div>
+            <div class="desc">Mr LAGACHE Judicaël, est élu Président du Club Musical Berckois.</div>
+          </div>
+        </li>
+    </ul>
+ </div>
 </section>
+
+
 
 {% endblock %}
