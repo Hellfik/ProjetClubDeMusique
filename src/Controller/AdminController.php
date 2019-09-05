@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
+
 use App\Form\UserType;
 use App\Entity\Article;
 use App\Form\ArticleType;
@@ -10,6 +10,7 @@ use App\Form\FamilleType;
 use App\Entity\Instruments;
 use App\Form\InstrumentType;
 use App\Entity\FamilleInstruments;
+use App\Entity\User;
 use App\Repository\UserRepository;
 use App\Repository\ArticleRepository;
 use App\Repository\InstrumentsRepository;
