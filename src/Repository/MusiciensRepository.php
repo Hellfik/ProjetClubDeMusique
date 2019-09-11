@@ -19,6 +19,22 @@ class MusiciensRepository extends ServiceEntityRepository
         parent::__construct($registry, Musiciens::class);
     }
 
+    /**
+     * Retourne la les resultats de la recherche
+     */
+
+     public function findFilter($search){
+        return $this->createQueryBuilder('p')
+                    ->where('p.nom like :search')
+                    ->orWhere('p.prenom like :search')
+                    ->setParameter('search', '%' . $search . '%')
+                    ->getQuery()
+                    ->getResult()
+                    ;
+    }
+
+
+
     // /**
     //  * @return Musiciens[] Returns an array of Musiciens objects
     //  */

@@ -28,7 +28,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% set compteur = 0 %} {% for user in users %} {% if user.username == app.user.username %} {% else %}
+                    {% set compteur = 0 %} {% for user in users %} 
                     <tr class="text-center h-100">
                         {% set compteur = compteur + 1 %}
                         <td class="align-middle">{{ compteur }}</td>
@@ -38,7 +38,7 @@
                         </td>
                         <td colspan="2"><a href="{{path('admin_edit_user', {'id' : user.id})}}" class="btn btn-success m-2">Modifier</a><a href="{{path('admin_delete_user', {'id' : user.id})}}" class="btn btn-danger m-2">Supprimer</a></td>
                     </tr>
-                    {% endif %} {% endfor %}
+                     {% endfor %}
                 </tbody>
             </table>
         </div>

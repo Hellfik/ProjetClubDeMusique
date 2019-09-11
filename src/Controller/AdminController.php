@@ -84,6 +84,7 @@ class AdminController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $manager->persist($user);
             $manager->flush();
+            return $this->redirectToRoute('admin_users');
         }
 
         return $this->render('admin/users/editUser.html.twig',[

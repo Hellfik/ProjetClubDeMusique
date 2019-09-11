@@ -4,10 +4,12 @@ namespace App\Controller;
 
 use App\Entity\Musiciens;
 use App\Form\MusicienType;
+use App\Repository\MusiciensRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
 
 class OrchestreController extends AbstractController
 {
@@ -20,11 +22,14 @@ class OrchestreController extends AbstractController
    }
 
     /**
-    *@Route("/orchestre/musiciens", name="musiciens") 
+    *@Route("/admin/musiciens", name="admin_musiciens") 
     */
-    public function musiciens()
+    public function musiciens(MusiciensRepository $repo) 
     {
-        return $this->render('orchestre/musiciens.html.twig');
+        $musiciens = $repo->findAll();
+        return $this->render('admin/musiciens/musicien.html.twig', [
+            'musiciens' => $musiciens
+        ]);
     }
 
     /**
@@ -42,10 +47,43 @@ class OrchestreController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $manager->persist($musicien);
             $manager->flush();
-            return $this->redirectToRoute('musiciens');
         }
         return $this->render('admin/musiciens/addmusicien.html.twig', [
             'formMusicien' => $form->createView()
+        ]);
+    }
+    
+    /**
+    *@Route("/orchestre/musiciens", name="musiciens") 
+    */
+    public function listMusicien()
+    {
+        return $this->render('orchestre/musiciens.html.twig');
+    }
+
+        /**
+     * Liste tous les utilisateurs enregistrés dans la base de données
+     * @Route("/admin/musiciens", name="admin_musiciens")
+     */
+
+     public function showMusiciens(MusiciensRepository $repo){
+        //Si l'utilisateur a entré une recherche
+        if(isset($_GET['search']) && !empty($_GET['search'])){
+            //Requete en fonction de la recherche de l'utilisateur
+            $musiciens = $repo->findFilter($_GET['search']);
+            //Stock la recherche dans une variable
+            $search = $_GET['search'];
+            //Permet de savoir si une requete SQL a été envoyée
+            $send = true;
+        }else{
+            $musiciens = $repo->findAll();
+            $search = null;
+            $send = false;
+        }
+        return $this->render('admin/musiciens/musicien.html.twig',[
+            'musiciens' => $musiciens,
+            'search' => $search,
+            'send' => $send
         ]);
     }
 

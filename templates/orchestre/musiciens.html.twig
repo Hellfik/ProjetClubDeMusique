@@ -8,15 +8,15 @@
 
 <div class="swiper-container">
 
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper musiciens">
     {% for i in 1..64 %}
-        <div class="swiper-slide">
+        <div class="swiper-slide mt-5" style="width:18rem; height: 25rem;">
             <div class="card-title">
-                <h3>Image du musicien</h3>
+                <p>Image du musicien</p>
             </div>
             <div class="card-content">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, libero. Numquam fuga quam amet eveniet minus, nesciunt reprehenderit, sit quia sint ad expedita magni laudantium dolore ut repudiandae tenetur. Dolorum!</p>
-                <a href="#">Read more</a>
+                <h4>Nom</h4>    
+                <h4>Prénom</h4>           
             </div>
         </div>
          {% endfor %}
@@ -27,7 +27,7 @@
 
 {% endblock %} {% block javascripts %}
 <script src="{{asset('js/swiper.min.js')}}"></script>
-<script>
+{# <script>
     var swiper = new Swiper('.swiper-container', {
         effect: 'coverflow',
         grabCursor: true,
@@ -44,5 +44,5 @@
             el: '.swiper-pagination',
         },
     });
-</script>
+</script> #}
 {% endblock %}
