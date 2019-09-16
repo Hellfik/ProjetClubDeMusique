@@ -1,28 +1,37 @@
 {% extends 'base.html.twig' %} {% block stylesheets %}
 <link rel="stylesheet" href="{{asset('css/swiper.min.css')}}">
 <link rel="stylesheet" href="{{asset('css/edm.css')}}">{% endblock %} {% block body %}
-<div class="col-12 margin">
-    <h2 class="h1 text-white text-center">Nos musiciens</h2>
-</div>
+
 <!-- Swiper -->
 
 <div class="swiper-container">
+    <div class="container margin jumbotron bg-white col-8">
+    {# <div class="card-header bg-success">
+        <h2>Gérer les Musiciens</h2>
+        <form class="form-inline my-2 my-lg-0" method="GET">
+            {% if send %}
+             <input class="form-control mr-sm-2" type="search" name="search" placeholder="Rechercher" aria-label="Search" value="{{search}}"> {% else %}
+            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Rechercher" aria-label="Search"> {% endif %}
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Rechercher</button>
+        </form>
+    </div> #}
+        <h2 class="h1 text-black text-center">Nos musiciens</h2>
 
-    <div class="swiper-wrapper musiciens">
-    {% for i in 1..64 %}
-        <div class="swiper-slide mt-5" style="width:18rem; height: 25rem;">
-            <div class="card-title">
-                <p>Image du musicien</p>
+        <div class="swiper-wrapper musiciens">
+        {% for i in 1..64 %}
+            <div class="swiper-slide mt-5 mr-2" style="width:12rem; height: 21rem;">
+                <div class="card-title">
+                    <p>Image du musicien</p>
+                </div>
+                <div class="card-content">
+                    <h4>Nom</h4>    
+                    <h4>Prénom</h4>           
+                </div>
             </div>
-            <div class="card-content">
-                <h4>Nom</h4>    
-                <h4>Prénom</h4>           
-            </div>
+            {% endfor %}
         </div>
-         {% endfor %}
-    </div>
 
-   
+    </div>   
 </div>
 
 {% endblock %} {% block javascripts %}

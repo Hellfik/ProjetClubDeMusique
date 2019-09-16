@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Musiciens;
 use App\Form\MusicienType;
 use App\Repository\MusiciensRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
@@ -66,17 +67,24 @@ class OrchestreController extends AbstractController
      * @Route("/admin/musiciens", name="admin_musiciens")
      */
 
-     public function showMusiciens(MusiciensRepository $repo){
+     public function showMusiciens(MusiciensRepository $repo, PaginatorInterface $paginator, Request $request){
         //Si l'utilisateur a entré une recherche
         if(isset($_GET['search']) && !empty($_GET['search'])){
             //Requete en fonction de la recherche de l'utilisateur
-            $musiciens = $repo->findFilter($_GET['search']);
+            $musiciens = $paginator->paginate(
+                $repo->findFilter($_GET['search']),
+                $request->query->getInt('page',1),7
+            );
+
             //Stock la recherche dans une variable
             $search = $_GET['search'];
             //Permet de savoir si une requete SQL a été envoyée
             $send = true;
         }else{
-            $musiciens = $repo->findAll();
+            $musiciens = $paginator->paginate(
+                $repo->findAll(),
+            $request->query->getInt('page', 1),10
+            );
             $search = null;
             $send = false;
         }
