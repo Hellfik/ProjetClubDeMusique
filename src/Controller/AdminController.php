@@ -84,6 +84,7 @@ class AdminController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $manager->persist($user);
             $manager->flush();
+
             return $this->redirectToRoute('admin_users');
         }
 
@@ -156,6 +157,8 @@ class AdminController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $manager->persist($article);
             $manager->flush();
+
+            return $this->redirectToRoute('admin_articles');
         }
 
         return $this->render('admin/articles/editArticle.html.twig',[
@@ -176,7 +179,10 @@ class AdminController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
             $article->setCreatedAt(new \DateTime());
-
+            $file = $form->get('image')->getData();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('upload_directory'), $fileName);
+            $article->setImage($fileName);
             $manager->persist($article);
             $manager->flush();
 

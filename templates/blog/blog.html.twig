@@ -8,7 +8,7 @@
         <section class="description col-md-8">
             {% for article in articles %}
             <div class="card mb-4 bg-white">
-                <img class="card-img-top" src="{{article.image}}" alt="Card image cap">
+                <img class="card-img-top" src="/image/{{article.image}}" alt="Card image cap">
                 <div class="card-body">
                     <h2 class="card-title">{{article.title}}</h2>
                     <a href="{{ path('blog_show', {'id': article.id})}}" class="btn btn-success">Lire l'article &rarr;</a>

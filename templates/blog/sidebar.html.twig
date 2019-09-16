@@ -1,4 +1,4 @@
-<aside class="sidebar col-md-4 text-center">
+<aside class="sidebar col-md-3 text-center">
     <!-- Outils de recherche -->
     <div class="card bg-white">
         <h5 class="card-header text-left">Rechercher</h5>
@@ -21,7 +21,7 @@
                 <div class="col-12">
                     <div class="row">
                         <a class="col-4 img_widget mb-3 ml-2" href="{{ path('blog_show', {'id': recentArticle.id})}}">
-                            <img src="{{recentArticle.image }}" alt="... ">
+                            <img src="/image/{{recentArticle.image }}" alt="... ">
                         </a>
                         <div class="col-6 text-left">
                             <h6>{{recentArticle.title}}</h6>

@@ -6,6 +6,7 @@ use App\Entity\Musiciens;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class MusicienType extends AbstractType
 {
@@ -14,7 +15,9 @@ class MusicienType extends AbstractType
         $builder
             ->add('nom')
             ->add('prenom')
-            ->add('photos')
+            ->add('photos', FileType::class, [
+                'label' =>false
+            ])
         ;
     }
 

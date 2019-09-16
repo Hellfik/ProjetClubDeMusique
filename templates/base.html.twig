@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}{% endblock %}</title>
-        <link rel="stylesheet" href="{{asset('css/style.css')}}">
-        <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-            <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-                <a class="navbar-brand" href="{{ path('home')}}">Club de Musique</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> {% block stylesheets %}{% endblock %}
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="{{ path('home')}}">Club de Musique</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarColor02">
-                    <ul class="navbar-nav ml-lg-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('home')}}"><i class="fa fa-home"></i> Accueil</span></a>
-                        </li>
-                    <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav ml-lg-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('home')}}"><i class="fa fa-home"></i> Accueil</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                                 Ecole de Musique
                             </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Sorties Annuelles</a>
-                                <a class="dropdown-item" href="{{path('instruments')}}">Intruments enseignés</a>
-                                <a class="dropdown-item" href="{{ path('professeur')}}">Les professeurs</a>
-                                <a class="dropdown-item" href="">Tarifs d'inscription</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Sorties Annuelles</a>
+                        <a class="dropdown-item" href="{{path('instruments')}}">Intruments enseignés</a>
+                        <a class="dropdown-item" href="{{ path('professeur')}}">Les professeurs</a>
+                        <a class="dropdown-item" href="">Tarifs d'inscription</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                                 Orchestre
                             </a>
                             <div class="dropdown-menu">
@@ -47,9 +48,9 @@
                                 Informations supplémentaires
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ path('historique') }}">Page Historique</a>
-                                <a class="dropdown-item" href="{{ path('mecenat') }}">Page mécénat</a>
-                                <a class="dropdown-item" href="{{ path('revuePresse') }}">Page revue de presse</a>
+                                <a class="dropdown-item" href="{{ path('historique')}}">Page Historique</a>
+                                <a class="dropdown-item" href="{{path('mecenat')}}">Page mécénat</a>
+                                <a class="dropdown-item" href="{{path('revuePresse')}}">Page revue de presse</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -81,17 +82,18 @@
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-        <!-- Popper JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script>
-            $(document).scroll(function(){
-                $('.navbar').toggleClass('scrolled', $(this)
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).scroll(function() {
+            $('.navbar').toggleClass('scrolled', $(this)
                 .scrollTop() > $('.navbar').height());
-            })
-        </script> 
-        {% block javascripts %}{% endblock %}
-    </body>
+        })
+    </script>
+    {% block javascripts %}{% endblock %}
+</body>
+
 </html>
