@@ -4,10 +4,15 @@
         <h5 class="card-header text-left">Rechercher</h5>
         <div class="card-body">
             <div class="input-group">
-                <input type="text" class="form-control bg-dark" placeholder="Rechercher...">
+            <form method='get'>
+            {% if send %}
+                     <input class="form-control mr-sm-2" type="search" name="search" placeholder="Rechercher" aria-label="Search" value="{{search}}"> {% else %}
+                     <input class="form-control mr-sm-2" type="search" name="search" placeholder="Rechercher" aria-label="Search"> {% endif %}
+
                 <span class="input-group-btn">
                     <button class="btn btn-dark ml-1" type="button">Rechercher</button>
                 </span>
+                </form>
             </div>
         </div>
     </div>
