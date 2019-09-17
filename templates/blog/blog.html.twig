@@ -1,20 +1,16 @@
 {% extends 'base.html.twig' %} {% block title %}Blog{% endblock %} {% block stylesheets %}
 <link rel="stylesheet" href="{{asset('css/blog.css')}}"> {% endblock %} {% block body %}
-<div class="col-12 margin">
-    <h2 class="h1-responsive mb-5 font-weight-bold text-center">Blog</h2>
+
+<div class="col-12 margin px-0">
+    <h2 class="h1-responsive mb-5 font-weight-bold text-center titre py-4">Blog</h2>
+
 </div>
 <div class="container">
-<div class="row ">
-<div class="col-12">
-<h4 class="mb-2 font-weight-bold text-black"style="color:black">Article</h4>
-</div>
-</div>
-</div>
-<div class="container">
-    <div class="row">
+    <div class="row ">
         <section class="description col-md-8">
+        <div class="row">
             {% for article in articles %}
-            <div class="card mb-4 bg-white">
+            <div class=" col-md-5 ml-3 card mb-4 bg-white">
                 <img class="card-img-top" src="/image/{{article.image}}" alt="Card image cap">
                 <div class="card-body">
                     <h2 class="card-title">{{article.title}}</h2>
@@ -26,8 +22,14 @@
             </div>
 
             {% endfor %}
+            </div>
+              <div class="navigation d-flex justify-content-center">
+    {{ knp_pagination_render(articles) }}
+</div>
         </section>
         {{ include('blog/sidebar.html.twig')}}
     </div>
+    
 </div>
+
 {% endblock %}
