@@ -1,8 +1,67 @@
 {% extends 'base.html.twig' %} 
-
+{% block stylesheets%}
+<link rel="stylesheet" href="{{asset('css/edm.css')}}">
+{% endblock %}
 {% block body %}
-<div class="col-12 margin">
-    <h2 class="h2-responsive text-center">Mécénat</h2>
+<div class="jumbotron jumbotron-fluid margin bandeau col-12">
+    <h2 class="h2-responsive text-center text-white">Mécénat</h2>
+</div>
+
+<div class="margin container bg-white col-12">
+
+    <h3 class="mt-3 mb-3 text-center">Qu'est-ce que le mécénat ?</h3>
+
+    <p>Le mécénat est un dispositif mis en place afin de diversifier le financement de projets dans des domaines déterminés en autorisant pour les donateurs (entreprises et particuliers) des avantages fiscaux.</p>
+    <hr>
+
+
+    <h5 class="mt-5 mb-3"><strong>1. D&Eacute;FINITION JURIDIQUE DU M&Eacute;C&Eacute;NAT</strong></h5>
+    <p>La définition retenue est celle du Journal Officiel des 31 janvier 1989 et 22 septembre 2001 : "<em><strong>soutien matériel</strong> apporté <strong>sans contrepartie directe</strong> de la part du bénéficiaire, à une œuvre ou à une personne pour l’exercice d’activités présentant un <strong>intérêt général</strong>, s’étendant aux champs de la culture, de la solidarité et de l’environnement"</em>.</p>
+    <p><strong>A noter :</strong><em> Le parrainage (ou sponsoring en anglais) se distingue du mécénat. Selon l'arrêté du 6 janvier 1989, il se définit comme un soutien apporté à un projet, une manifestation (...) <strong>dans le but d'en tirer un bénéfice direct.</strong></p></em>
+    <p>L'entreprise donne 100 euros pour un équivalent publicitaire de 100 euros : c'est une réelle démarche commerciale.</p>
+
+    <h5 class="mt-5 mb-3"><strong>2. LES DIFF&Eacute;RENTS TYPES DE M&Eacute;C&Eacute;NAT</strong></h5>
+
+    <p>Quand on pense au mécénat, on pense souvent à un don d'argent. Pourtant, il existe différentes types de mécénats :</p>
+
+        <ul>
+            <li><strong>Le mécénat en numéraire :</strong> le plus pratiqué. Un mécène fait un don d'argent pour un projet.</li>
+            <li><strong>Le mécénat en nature :</strong> il consiste à faire don de matériel neuf ou en stock  (ex : un local, du matériel d’éclairage, un ordinateur…)</li>
+            <li><strong>Le mécénat de copétences :</strong> c’est lorsque l'entreprise (le donateur) met à disposition un salarié ou son savoir-faire pour une action spécifique (ex : une entreprise peut autoriser que son salarié, avec son accord, passe quelques heures de son temps de travail par semaine sur un projet culturel (site web, restauration, maçonnerie, éclairage....)</li>
+        </ul>
+    <p><strong>A noter :</strong><em>Il est parfois plus facile pour une entreprise de proposer du matériel ou de dégager du temps pour aider une association que de faire un don en numéraire. Aussi, quand on est porteur de projet, il  est essentiel d'exprimer au plus près ses besoins et de chiffrer chaque poste, en identifiant ceux où l’on pourrait recourir à du mécénat de compétences ou en nature.</em></p>
+
+    <h5 class="mt-5 mb-3"><strong>3. CONDITIONS D'&Eacute;LIGIBILIT&Eacute; AU M&Eacute;C&Eacute;NAT</strong></h5>
+
+    <p>Pour recevoir des fonds privés et émettre un reçu fiscal au donateur, le bénéficiaire doit respecter plusieurs critères :</p>
+
+        <ul>
+            <li>La structure doit être d'intérêt général</li>
+            <li>la gestion de la structure doit être désintéressée (à but non lucratif)</li>
+            <li>la structure et les projets afférents <strong>ne doivent pas bénéficier à un cercle restreint</strong> de personnes</li>
+        </ul>
+    <p>Au vu de ces critères, les structures soumises à l’impôt sur les sociétés ou les revenus se trouvent, à priori, exclues du champ du mécénat.</p>
+    <p><strong>Toutefois, il y a des exceptions  pour les structures ayant pour activité principale la diffusion :</strong></p>
+
+        <ul>
+            <li>De spectacle vivant, cirque, cinéma</li>
+            <li>de festivals</li>
+            <li>d'expositions d’art contemporain</li>
+        </ul>
+    
+    <p>Les <strong>structures éligibles au mécénat</strong> et respectant les conditions d’éligibilité peuvent donc être :</p>
+
+        <ul>
+            <li>L’Etat et ses établissements ainsi que les collectivités territoriales</li>
+            <li>Les organismes d’intérêt général (en particulier les associations loi 1901 dont la gestion est désintéressée et l’activité non lucrative et non concurrentielle, et dont l’activité ne profite pas à un cercle restreint de personnes)</li>
+            <li>Les fondations et associations reconnues d’utilité publique, et les fondations abritées</li>
+            <li>Les fondations d’entreprise (dons des salariés de l’entreprise fondatrice et des salariés du groupe)</li>
+            <li>Les fonds de dotation</li>
+            <li>Les musées de France (au sens de la loi 2002-5 du 4 janvier 2002 relative aux musées de France)</li>
+            <li>La plupart des monuments historiques privés (pour leurs travaux de restauration sur les parties protégées ou leurs travaux d’accessibilité), par l’intermédiaire de la  Fondation du patrimoine ou d’un organisme agréé (La Demeure Historique, Les vieilles maisons françaises)</li>
+            <li>Les organismes dont la gestion est désintéressée et qui ont pour activité principale la présentation au public d’œuvres du spectacle vivant ou l’organisation d’expositions d’art contemporain, même si leur activité est assujettie à la TVA et aux autres impôts commerciaux</li>
+            <li>Certains établissements de recherche ou d’enseignement public ou privé, d’intérêt général, à but non lucratif.</li>
+        </ul>
 </div>
 
 {% endblock %}

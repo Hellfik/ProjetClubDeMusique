@@ -55,15 +55,42 @@ class OrchestreController extends AbstractController
     }
     
     /**
+    *Liste tous les musiciens
     *@Route("/orchestre/musiciens", name="musiciens") 
     */
-    public function listMusicien()
+    public function listMusicien(MusiciensRepository $repo, PaginatorInterface $paginator, Request $request)
     {
-        return $this->render('orchestre/musiciens.html.twig');
+        //Si l'utilisateur a entré une recherche
+        if(isset($_GET['search']) && !empty($_GET['search'])){
+            //Requête en fonction de la recherche de l'utilisateur
+            $musiciens = $paginator->paginate(
+                $repo->findFilter($_GET['search']),
+                $request->query->getInt('page', 1),8
+            );
+
+            //Stock la recherche dans une variable
+            $search = $_GET['search'];
+            //Permet de savoir si une requete SQL a été envoyée
+            $send = true;
+
+        }else{
+            $musiciens = $paginator->paginate(
+                $repo->findAll(),
+            $request->query->getInt('page', 1),8
+            );
+            $search = null;
+            $send = false;
+        }
+        
+        return $this->render('orchestre/musiciens.html.twig', [
+            'musiciens' => $musiciens,
+            'search'    => $search,
+            'send'      => $send
+        ]);
     }
 
         /**
-     * Liste tous les utilisateurs enregistrés dans la base de données
+     * Liste tous les musiciens enregistrés dans la base de données et pagination
      * @Route("/admin/musiciens", name="admin_musiciens")
      */
 
@@ -90,9 +117,49 @@ class OrchestreController extends AbstractController
         }
         return $this->render('admin/musiciens/musicien.html.twig',[
             'musiciens' => $musiciens,
-            'search' => $search,
-            'send' => $send
+            'search'    => $search,
+            'send'      => $send
         ]);
+    }
+
+    /**
+     * Fonction permettant de modifier un musicien
+     *@Route("/admin/editmusicien/{id}", name="admin_edit_musiciens")
+     * @param Musiciens $musiciens
+     * @param ObjectManager $manager
+     * @param Request $request
+     * 
+     */
+    public function editMusiciens(ObjectManager $manager, Request $request,Musiciens $musiciens)
+    {
+        $form = $this->createForm(MusicienType::class, $musiciens);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $manager->persist($musiciens);
+            $manager->flush();
+
+            return $this->redirectToRoute('admin_musiciens');
+        }
+
+        return $this->render('admin/musiciens/editmusicien.html.twig', [
+            'form' => $form->createView(),
+            'musiciens' => $musiciens
+        ]);
+    }
+
+     /**
+     * Fonction permettant de supprimer un musicien
+     *
+     * @param Musiciens $user
+     * @param ObjectManager $manager
+     * @Route("admin/deleteMusiciens/{id}", name="admin_delete_musiciens")
+     */
+     public function deleteMusiciens( Musiciens $musiciens, ObjectManager $manager){
+        $manager->remove($musiciens);
+        $manager->flush();
+
+        return $this->redirectToRoute('admin_musiciens');
     }
 
     /**

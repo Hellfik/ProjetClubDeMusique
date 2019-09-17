@@ -1,57 +1,41 @@
 {% extends 'base.html.twig' %} {% block stylesheets %}
 <link rel="stylesheet" href="{{asset('css/swiper.min.css')}}">
-<link rel="stylesheet" href="{{asset('css/edm.css')}}">{% endblock %} {% block body %}
+<link rel="stylesheet" href="{{asset('css/orchestre.css')}}">{% endblock %} {% block body %}
 
 <!-- Swiper -->
 
 <div class="swiper-container">
     <div class="container margin jumbotron bg-white col-8">
-    {# <div class="card-header bg-success">
-        <h2>Gérer les Musiciens</h2>
-        <form class="form-inline my-2 my-lg-0" method="GET">
-            {% if send %}
-             <input class="form-control mr-sm-2" type="search" name="search" placeholder="Rechercher" aria-label="Search" value="{{search}}"> {% else %}
-            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Rechercher" aria-label="Search"> {% endif %}
-            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Rechercher</button>
-        </form>
-    </div> #}
+       
+            <form class="form-inline my-2 my-lg-0 float-right" method="GET">
+                {% if send %}
+                <input class="form-control mr-sm-2 border-bottom-dark" type="search" name="search" placeholder="Rechercher" aria-label="Search" value="{{search}}"> {% else %}
+                <input class="form-control mr-sm-2 border-bottom" type="search" name="search" placeholder="Rechercher" aria-label="Search"> {% endif %}
+                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Rechercher</button>
+            </form><br><br>
+
         <h2 class="h1 text-black text-center">Nos musiciens</h2>
 
         <div class="swiper-wrapper musiciens">
-        {% for i in 1..64 %}
+        {% for musicien in musiciens %}
             <div class="swiper-slide mt-5 mr-2" style="width:12rem; height: 21rem;">
                 <div class="card-title">
                     <p>Image du musicien</p>
                 </div>
                 <div class="card-content">
-                    <h4>Nom</h4>    
-                    <h4>Prénom</h4>           
+                    <h5 class="d-flex justify-content-center">{{ musicien.nom }}</h5>    
+                    <h5>{{ musicien.prenom }}</h5>           
                 </div>
             </div>
             {% endfor %}
         </div>
-
-    </div>   
+        <div class="navigation d-flex justify-content-center mt-5">
+        {{ knp_pagination_render(musiciens) }}
+        </div>       
+    </div>        
 </div>
 
 {% endblock %} {% block javascripts %}
 <script src="{{asset('js/swiper.min.js')}}"></script>
-{# <script>
-    var swiper = new Swiper('.swiper-container', {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        coverflowEffect: {
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-        },
-    });
-</script> #}
+
 {% endblock %}
