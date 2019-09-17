@@ -1,5 +1,8 @@
 {% extends 'base.html.twig' %} {% block title %}Club de musique Berckois{% endblock %} {% block body %}
-<section class="margin jumbotron banner jumbotron-fluid text-center bg-white col-12">
+<section class="margin jumbotron banner jumbotron-fluid text-center">
+    <video id="video" autoplay="true" loop muted>
+        <source src="{{asset('image/boucle.mov')}}"></source>
+    </video>
     <div class="container main">
         <div class="contentBox">
             <h1>Club musical de Berck-sur-mer</h1>
@@ -9,10 +12,12 @@
     </div>
 </section>
 
-<section class="row">
-    <div class="col-md-8">
-        <h2>Présentation</h2>
+<section class="container-fluid ">
+    <div class="row">
+        <div class="col-md-9">
+            <h2>Présentation</h2>
+        </div>
+        {{ include('blog/sidebar.html.twig')}}
     </div>
-    {{ include('blog/sidebar.html.twig')}}
 </section>
 {% endblock %}

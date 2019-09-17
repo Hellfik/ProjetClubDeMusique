@@ -19,80 +19,99 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav ml-lg-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('home')}}"><i class="fa fa-home"></i> Accueil</span></a>
+                    <a class="nav-link" href="{{ path('home')}}"><i class="fa fa-home"></i> ACCUEIL</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                Ecole de Musique
+                                ECOLE DE MUSIQUE
                             </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Sorties Annuelles</a>
-                        <a class="dropdown-item" href="{{path('instruments')}}">Intruments enseignés</a>
-                        <a class="dropdown-item" href="{{ path('professeur')}}">Les professeurs</a>
-                        <a class="dropdown-item" href="">Tarifs d'inscription</a>
+                        <a class="dropdown-item" href="#">SORTIES ANNUELLES</a>
+                        <a class="dropdown-item" href="{{path('instruments')}}">INSTRUMENTS ENSEIGNES</a>
+                        <a class="dropdown-item" href="{{ path('professeur')}}">LES PROFESSEURS</a>
+                        <a class="dropdown-item" href="">TARIFS D'INSCRIPTION</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                Orchestre
+                                ORCHESTRE
                             </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{path('sortiesAnnuelles')}}">Sorties Annuelles</a>
-                                <a class="dropdown-item" href="{{ path('musiciens') }}">Nos musiciens</a>
-                                <a class="dropdown-item" href="{{path('documentsInscription')}}">Documents d'inscription</a>
-                                <a class="dropdown-item" href="{{path('tarifsOrchestre')}}">Tarifs Orchestre</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                Informations supplémentaires
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{path('sortiesAnnuelles')}}">SORTIES ANNUELLES</a>
+                        <a class="dropdown-item" href="{{ path('musiciens') }}">NOS MUSICIENS</a>
+                        <a class="dropdown-item" href="{{path('documentsInscription')}}">DOCUMENTS D'INSCRIPTION</a>
+                        <a class="dropdown-item" href="{{path('tarifsOrchestre')}}">TARIFS ORCHESTRE</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                INFORMATIONS SUPPLEMENTAIRES
                             </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ path('historique')}}">Page Historique</a>
-                                <a class="dropdown-item" href="{{path('mecenat')}}">Page mécénat</a>
-                                <a class="dropdown-item" href="{{path('revuePresse')}}">Page revue de presse</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('blog')}}">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('contact')}}">Contact</a>
-                        </li>
-                    </ul>
-                    {% if is_granted('ROLE_USER') %}
-                     <a href="{{ path('security_logout')}}">Deconnexion</a>
-                    {% else %}
-                    <a href="{{ path('security_login')}}" class="text-dark float-right mr-4 connexion"><i class="fa fa-user"></i></a>
-                    {% endif %}
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{ path('historique')}}">Page Historique</a>
+                        <a class="dropdown-item" href="{{path('mecenat')}}">Page mécénat</a>
+                        <a class="dropdown-item" href="{{path('revuePresse')}}">Page revue de presse</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('blog')}}">BLOG</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('contact')}}">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {% block body %} {% endblock %}
+    </div>
+    <footer class="page-footer">
+        <div class="container-fluid p-5">
+            <hr class="text-center separator my-3">
+
+            <div class="row text-center">
+                <div class="col-md-3 px-5">
+                    <h2>Club musical de Berck</h2>
                 </div>
-            </nav>
-            <div class="container-fluid main text-dark">
-                <div class="row">
-                    {% block body %}
-                    {% endblock %}
+                <div class="col-md-3 px-5">
+
+                    <p>150 avenue du docteur QUETTIER, 62600 Berck sur mer <br> 06.11.43.14.75
+
+                    </p>
+
+                </div>
+                <div class="col-md-3 px-5 separate">
+
+                    <p>Du lundi au vendredi de 07:30 à 21:15 <br> Le samedi de 08:30 à 18:45 <br> Le dimanche en fonction des projets de 9:00 à 17:15</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <a href="{{path('security_login')}}" class="btn btn-danger p-3 my-3 connexion">Se connecter</a>
                 </div>
             </div>
-            <footer class="page-footer" style="background-color:#000;">
-                <div class="container-fluid p-5">
-                    <hr class="text-center">
-                    <h1>Footer</h1>
+            <div class="container">
+                <div class="row border-top d-flex justify-content-end">
+                    <div class="d-flex">
+                        <div class="p-2 d-flex align-items-center"><i class="fa fa-facebook social" aria-hidden="true"></i>
+                        </div>
+                        <div class="p-2 d-flex align-items-center">Mentions Legales</div>
+                        <div class="p-2 d-flex align-items-center">
+                            Plan du site
+                        </div>
+                        <div class="p-2 d-flex align-items-center">
+                            Nous contacter
+                        </div>
+                    </div>
                 </div>
-            </footer>
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script>
-        $(document).scroll(function() {
-            $('.navbar').toggleClass('scrolled', $(this)
-                .scrollTop() > $('.navbar').height());
-        })
-    </script>
     {% block javascripts %}{% endblock %}
 </body>
 

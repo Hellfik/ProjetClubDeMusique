@@ -1,19 +1,27 @@
-body {
-    background: url('../image/piano-1655558_1920.jpg') !important;
+/**BANDEAU DE PRESENTATION POUR CHAQUE PAGE ECOLE DE MUSIQUE**/
+
+.bandeau_instrument {
+    background-image: url('../image/Picture1.jpg') !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
     background-size: cover !important;
-    background-attachment: fixed !important;
+    height: 350px !important;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
 
 /** CSS SWIPER **/
+
 .container {
     opacity: 0.9;
 }
+
 h4 {
     color: #000;
 }
+
 .swiper-container {
     width: 100%;
     padding-top: 50px;
@@ -60,4 +68,12 @@ h4 {
     text-align: center;
 }
 
-/* Start http://www.cursors-4u.com */ * {cursor: url(http://cur.cursors-4u.net/others/oth-5/oth480.cur), auto !important;} /* End http://www.cursors-4u.com */
+
+/* Start http://www.cursors-4u.com */
+
+* {
+    cursor: url(http://cur.cursors-4u.net/others/oth-5/oth480.cur), auto !important;
+}
+
+
+/* End http://www.cursors-4u.com */

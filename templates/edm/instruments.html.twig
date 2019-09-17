@@ -1,29 +1,30 @@
 {% extends 'base.html.twig' %} {% block stylesheets %}
 <link rel="stylesheet" href="{{asset('css/edm.css')}}"> {% endblock %} {% block body %}
-<div class="col-12 margin">
-    <h2 class="h2-responsive text-center">Les instruments que l'on enseigne</h2>
+<div class="jumbotron jumbotron-fluid margin bandeau_instrument">
+
+    <h2 class="h2-responsive text-center text-white d-flex align-items-center ">Les instruments enseignés</h2>
 </div>
 
-<form method="get" class="form-inline">
-    <div class="form-group">
-        <label for="famille">Famille D'instrument</label>
-        <select class="form-control ml-4" name="famille">
-        {% for famille in familleInstrument %}
-            {% if nrFamille ==  famille.id %}
-                <option value={{famille.id}} selected>{{famille.nom}}</option>
-            {% else %}
-                <option value={{famille.id}}>{{famille.nom}}</option>
-            {% endif %}
-        {% endfor %}
-        </select>
-        <button type="submit" class="btn btn-danger form-control ml-4">Filtrer</button>
-    </div>
-</form>
 <div class="col-12">
-    <ul>
-        {% for instrument in instruments %}
-        <li>{{ instrument.nom }} | {{ instrument.familleInstruments.nom}}</li>
-        {% endfor %}
+    <form method="get" class="form-inline">
+        <div class="form-group">
+            <label for="famille">Famille D'instrument</label>
+            <select class="form-control ml-4" name="famille">
+            {% for famille in familleInstrument %}
+                {% if nrFamille ==  famille.id %}
+                    <option value={{famille.id}} selected>{{famille.nom}}</option>
+                {% else %}
+                    <option value={{famille.id}}>{{famille.nom}}</option>
+                {% endif %}
+            {% endfor %}
+            </select>
+            <button type="submit" class="btn btn-danger form-control ml-4">Filtrer</button>
+        </div>
+    </form>
+
+    {% for instrument in instruments %}
+    <li>{{ instrument.nom }} | {{ instrument.familleInstruments.nom}}</li>
+    {% endfor %}
     </ul>
     {% if nrFamille %}
     <a class="btn btn-primary mb-3" href="{{ path('instruments')}}">Retour vers la liste des instruments</a> {% endif %}
