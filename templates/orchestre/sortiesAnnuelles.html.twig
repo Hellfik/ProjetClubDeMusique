@@ -1,8 +1,15 @@
 {% extends 'base.html.twig' %} 
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('css/swiper.min.css')}}">
+<link rel="stylesheet" href="{{asset('css/orchestre.css')}}">
+{% endblock %}
 
 {% block body %}
-<div class="col-12 margin">
-    <h2 class="h2-responsive text-center">Sorties Annuelles</h2>
+
+<!-- BANDEAU -->
+
+<div class="jumbotron jumbotron-fluid margin bandeau_instrument">
+    <h2 class="h2-responsive text-center  text-white d-flex align-items-center ">Sorties Annuelles</h2>
 </div>
 
 {% endblock %}

@@ -2,19 +2,23 @@
 <link rel="stylesheet" href="{{asset('css/swiper.min.css')}}">
 <link rel="stylesheet" href="{{asset('css/orchestre.css')}}">{% endblock %} {% block body %}
 
+<!-- BANDEAU -->
+
+<div class="jumbotron jumbotron-fluid margin bandeau_instrument">
+    <h2 class="h2-responsive text-center text-white d-flex align-items-center ">Nos Musiciens</h2>
+</div>
+
 <!-- Swiper -->
 
 <div class="swiper-container">
-    <div class="container margin jumbotron bg-white col-8">
-       
+    <div class="container margin jumbotron bg-white col-10">
+      
             <form class="form-inline my-2 my-lg-0 float-right" method="GET">
                 {% if send %}
                 <input class="form-control mr-sm-2 border-bottom-dark" type="search" name="search" placeholder="Rechercher" aria-label="Search" value="{{search}}"> {% else %}
                 <input class="form-control mr-sm-2 border-bottom" type="search" name="search" placeholder="Rechercher" aria-label="Search"> {% endif %}
                 <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Rechercher</button>
             </form><br><br>
-
-        <h2 class="h1 text-black text-center">Nos musiciens</h2>
 
         <div class="swiper-wrapper musiciens">
         {% for musicien in musiciens %}
@@ -29,7 +33,7 @@
             </div>
             {% endfor %}
         </div>
-        <div class="navigation d-flex justify-content-center mt-5">
+        <div class="navigation d-flex justify-content-center">
         {{ knp_pagination_render(musiciens) }}
         </div>       
     </div>        

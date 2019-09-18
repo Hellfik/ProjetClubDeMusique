@@ -1,0 +1,21 @@
+/** BANDEAU HAUT DE PAGE **/
+.bandeau_instrument {
+    background-image: url('../image/music.jpg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    height: 350px !important;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+h4,h5,ul {
+    color: #000 !important;
+}
+p {
+    color: #000 !important;
+    font-size: 1.2em !important;
+}
+
+/* Start http://www.cursors-4u.com */ * {cursor: url(http://cur.cursors-4u.net/others/oth-5/oth480.cur), auto !important;} /* End http://www.cursors-4u.com */

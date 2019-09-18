@@ -76,7 +76,7 @@ class OrchestreController extends AbstractController
         }else{
             $musiciens = $paginator->paginate(
                 $repo->findAll(),
-            $request->query->getInt('page', 1),8
+            $request->query->getInt('page', 1),12
             );
             $search = null;
             $send = false;

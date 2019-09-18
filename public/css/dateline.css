@@ -1,16 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,900);
 
-body {
-  background: url('../image/piano-1655558_1920.jpg') !important;
+.bandeau_instrument {
+  background-image: url('../image/music.jpg') !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
-  background-attachment: fixed !important;
+  height: 350px !important;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
-/* body{
-  font-family: 'Raleway', sans-serif;
-  color: #333;
-} */
 
 header h1{
   text-align: center;
