@@ -49,9 +49,29 @@ class BlogController extends AbstractController
      */
     public function show(Article $article, ArticleRepository $repo ){
         $recentArticles = $repo->findThreeMostRecent();
+        if(isset($_GET['search']) && !empty($_GET['search'])){
+            $articles = $repo->findFilter($_GET['search']);
+            $search = $_GET['search'];
+            $send = true;
+            return $this->redirectToRoute("blog", [
+                'articles'=>$articles,
+                'search'=>$search,
+                'send'=>$send
+
+
+            ]);
+        }else{
+            $articles = $repo->findById();
+            $search = null;
+            $send = false;
+        }
+        
          return $this->render('blog/show.html.twig', [
              'article' => $article,
-             'recentArticles' => $recentArticles
+             'articles' => $articles,
+             'recentArticles' => $recentArticles,
+             'search' => $search,
+             'send' => $send,
          ]);
     }
 
