@@ -5,16 +5,55 @@
     <h2 class="h1-responsive mb-5 font-weight-bold text-center titre py-4">Blog</h2>
 
 </div>
+{# <div class="container d-flex justify-content-center ">
+
+  
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+  
+  {% for recentArticle in recentArticles %}
+  <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
+  <img src="/image/{{recentArticle.image }}" alt="...">
+  <div class="carousel-caption d-none d-md-block">
+    <h5 class="titre">{{recentArticle.title}}</h5>
+  </div>
+</div>
+    
+  {% endfor %}
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+    
+
+   
+ </div>
+
+</div>
+<br> #}
 <div class="container">
     <div class="row ">
+
         <section class="description col-md-8">
-        <div class="row">
+        <div class="row centrer">
+{% if articles|length > 0 %}
+
             {% for article in articles %}
-            <div class=" col-md-5 ml-3 card mb-4 bg-white">
+            <div class=" col-md-5 mx-3 card mb-4 bg-white">
                 <img class="card-img-top" src="/image/{{article.image}}" alt="Card image cap">
                 <div class="card-body">
                     <h2 class="card-title">{{article.title}}</h2>
-                    <a href="{{ path('blog_show', {'id': article.id})}}" class="btn btn-success">Lire l'article &rarr;</a>
+                    <a href="{{ path('blog_show', {'id': article.id})}}" class="btn btn-dark">Lire l'article &rarr;</a>
                 </div>
                 <div class="card-footer text-muted">
                     Posté le {{article.createdAt | date('d/m/Y')}} à {{article.createdAt | date('h:i')}}
@@ -23,6 +62,12 @@
 
             {% endfor %}
             </div>
+        {% else  %}
+        <div class="alert alert-danger" style="background-color: rgba(255, 000,000, 0.5)">
+        Aucun Résultat...
+        </div>
+        {% endif %}
+
               <div class="navigation d-flex justify-content-center">
     {{ knp_pagination_render(articles) }}
 </div>
