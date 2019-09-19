@@ -23,38 +23,6 @@ class OrchestreController extends AbstractController
    }
 
     /**
-    *@Route("/admin/musiciens", name="admin_musiciens") 
-    */
-    public function musiciens(MusiciensRepository $repo) 
-    {
-        $musiciens = $repo->findAll();
-        return $this->render('admin/musiciens/musicien.html.twig', [
-            'musiciens' => $musiciens
-        ]);
-    }
-
-    /**
-     *@Route("admin/musiciens/add", name="add_musicien")
-     *
-     * @param ObjectManager $manager
-     * @param Request $request
-     * @return void
-     */
-    public function addmusicien(ObjectManager $manager, Request $request)
-    {
-        $musicien = new Musiciens;
-        $form = $this->createForm(MusicienType::class, $musicien);
-        $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid()){
-            $manager->persist($musicien);
-            $manager->flush();
-        }
-        return $this->render('admin/musiciens/addmusicien.html.twig', [
-            'formMusicien' => $form->createView()
-        ]);
-    }
-    
-    /**
     *Liste tous les musiciens
     *@Route("/orchestre/musiciens", name="musiciens") 
     */
@@ -89,7 +57,7 @@ class OrchestreController extends AbstractController
         ]);
     }
 
-        /**
+    /**
      * Liste tous les musiciens enregistrés dans la base de données et pagination
      * @Route("/admin/musiciens", name="admin_musiciens")
      */
@@ -121,6 +89,31 @@ class OrchestreController extends AbstractController
             'send'      => $send
         ]);
     }
+
+    /**
+     *Fonction pour ajouter un musicien et enregistrer dans la BDD
+     *@Route("admin/musiciens/add", name="add_musicien")
+     *
+     * @param ObjectManager $manager
+     * @param Request $request
+     * @return void
+     */
+    public function addmusicien(ObjectManager $manager, Request $request)
+    {
+        $musicien = new Musiciens;
+        $form = $this->createForm(MusicienType::class, $musicien);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+            $manager->persist($musicien);
+            $manager->flush();
+
+            return $this->redirectToRoute('admin_musiciens');
+        }
+        return $this->render('admin/musiciens/addmusicien.html.twig', [
+            'formMusicien' => $form->createView()
+        ]);
+    }
+
 
     /**
      * Fonction permettant de modifier un musicien
