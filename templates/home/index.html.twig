@@ -13,11 +13,63 @@
 </section>
 
 <section class="container-fluid ">
-    <div class="row">
-        <div class="col-12">
-            <h2>Présentation</h2>
+    <h2 class="text-center">Projet du club</h2>
+    <div class="container video-projet my-3">
+        <div class="row d-flex align-items-center">
+            <div class="col-md-6 p-md-3">
+                <h3>Lorem ipsum dolor sit amet </h3>
+                <p>
+                    Description PROJET de l'Ecole d'enseignement Musicale de Berck sur Mer 62600 FRANCE, par le conseil d'administration du Club Musical de Berck sur Mer, qui est d'intérêt général pour les particuliers et entreprises le Club peut recevoir des dons, en contre
+                    partie de bon de défiscalisation conforme à la loi.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <iframe class="mx-auto" style="width: 480px; height:320px;" src="https://www.youtube.com/embed/UIu5fk_fKq8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
-
     </div>
+    <hr class="my-3" style="width:50%; height:3px;border:none;color:#333;background-color:#333;">
+    <div class="container video-projet my-3">
+        <div class="row d-flex align-items-center">
+            <div class="col-md-6">
+                <iframe style="width: 480px; height:320px;" src="https://www.youtube.com/embed/mVWBOM5DJBM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="col-md-6 p-md-3">
+                <h3>Lorem ipsum dolor sit amet </h3>
+                <p>
+                    Présentation du PROJET de l'Ecole de Musique de Berck sur Mer 62600 par le conseil d'administration du Club Musical de Berck
+                </p>
+            </div>
+        </div>
+    </div>
+
+
 </section>
+<div class="container-fluid my-3" style="padding:4.5rem; background:#000">
+    <div class="row mx-auto">
+        <blockquote class="text-center text-white mx-auto" id="live"></blockquote>
+        <!-- <div class="belongTo hidden " id="belongTo"><i>Nietzsche</i></div> -->
+    </div>
+</div>
+{% endblock %} {% block javascripts %}
+<script>
+    var i = 0;
+    var txt = 'Sans la musique, la vie serait une erreur...';
+    var speed = 50;
+    const typing = () => {
+        if (i < txt.length) {
+            document.getElementById("live").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typing, speed);
+        } else {
+            document.getElementById('live').classList.add("live");
+            document.getElementById('belongTo').classList.add("fade-in");
+            document.getElementById('belongTo').classList.remove("hidden");
+        }
+
+    };
+
+
+    typing();
+</script>
 {% endblock %}
