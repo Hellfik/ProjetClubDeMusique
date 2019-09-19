@@ -16,9 +16,12 @@ class InfosController extends AbstractController
      * @Route("/infos/historique", name="historique")
      * Affiche la page historique
      */
-    public function historique()
+    public function historique(HistoriqueRepository $repo)
     {
-        return $this->render('infos/historique.html.twig');
+        $events = $repo->findAll();
+        return $this->render('infos/historique.html.twig',[
+            'events' => $events
+        ]);
     }
 
     /**

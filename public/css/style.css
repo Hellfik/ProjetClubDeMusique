@@ -34,10 +34,15 @@ a:hover {
     font-size: 15px;
 }
 
+.navbar.navbar-expand-lg.fixed-top a:hover {
+    /* border-bottom: 2px solid rgb(139, 139, 139); */
+    color: rgb(139, 139, 139)!important;
+    /* margin-bottom: -2px; */
+}
+
 .navbar.navbar-expand-lg.fixed-top a {
     position: relative;
     color: #fff !important;
-    transition: 0.5s;
 }
 
 .navbar.navbar-expand-lg.fixed-top li:after {
@@ -47,6 +52,16 @@ a:hover {
     left: 0;
     height: 2px;
     width: 100%;
+}
+
+.dropdown-menu {
+    border-radius: 0px !important;
+    background-color: #000 !important;
+    display: none;
+}
+
+.dropdown-item:hover {
+    background-color: transparent !important;
 }
 
 #video {
@@ -67,6 +82,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 .banner h1 {
@@ -88,12 +104,17 @@ a:hover {
     transition: 0.5s;
     background-color: #000000;
     border-bottom: 2px solid white;
-    height: 80px;
+    height: 60px;
+}
+
+.contentBox h1,
+.contentBox p {
+    text-shadow: 0px 0px 10px #000;
 }
 
 hr {
-    height: 3px;
-    background-color: #000;
+    height: 4px;
+    background-color: #fff;
 }
 
 h2,
@@ -138,6 +159,14 @@ footer .row {
 
 .social {
     font-size: 30px !important;
+}
+
+.footer-link a {
+    color: black;
+}
+
+.footer-link a:hover {
+    color: rgb(139, 139, 139);
 }
 
 

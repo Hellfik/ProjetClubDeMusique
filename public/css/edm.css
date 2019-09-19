@@ -1,11 +1,22 @@
 /**BANDEAU DE PRESENTATION POUR CHAQUE PAGE ECOLE DE MUSIQUE**/
 
 .bandeau_instrument {
-    background-image: url('../image/Picture1.jpg') !important;
+    background-image: url('../image/music.jpg') !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
     background-size: cover !important;
-    height: 350px !important;
+    height: 300px !important;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.bandeau_prof {
+    background-image: url('../image/music.jpg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    height: 300px !important;
     display: flex;
     align-content: center;
     justify-content: center;
@@ -64,4 +75,12 @@
     text-align: center;
 }
 
-/* Start http://www.cursors-4u.com */ * {cursor: url(http://cur.cursors-4u.net/others/oth-5/oth480.cur), auto !important;} /* End http://www.cursors-4u.com */
+
+/* Start http://www.cursors-4u.com */
+
+* {
+    cursor: url(http://cur.cursors-4u.net/others/oth-5/oth480.cur), auto !important;
+}
+
+
+/* End http://www.cursors-4u.com */

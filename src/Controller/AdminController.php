@@ -110,13 +110,13 @@ class AdminController extends AbstractController
 
     /**
      * Liste tous les articles de la base de données
-     * @Route("admin/articles", name="admin_articles")
+     * @Route("admin/articles", name="admin_articles", methods={"GET", "POST"})
      */
 
     public function showArticles(ArticleRepository $repo){
-        if(isset($_GET['search']) && !empty($_GET['search'])){
-            $articles = $repo->findFilter($_GET['search']);
-            $search = $_GET['search'];
+        if(isset($_POST['search']) && !empty($_POST['search'])){
+            $articles = $repo->findFilter($_POST['search']);
+            $search = $_POST['search'];
             $send = true;
         }else{
             $articles = $repo->findAllByDate();
