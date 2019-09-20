@@ -14,6 +14,7 @@ class HistoriqueType extends AbstractType
     {
         $builder
             ->add('date')
+            // Création de la page word
             ->add('evenements', CKEditorType::class, [
                 'config' => [
                     'unicolor' => '#e2e2e2',
