@@ -1,0 +1,19 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+       pdf:
+           uri_prefix: /files/pdf
+           upload_destination: '%kernel.project_dir%/public/files/pdf'
+
+           inject_on_load: false
+           delete_on_update: true
+           delete_on_remove: true
+        
+       musicien_image:
+           uri_prefix: /images/musiciens
+           upload_destination: '%kernel.project_dir%/public/images/musiciens'
+
+           inject_on_load: false
+           delete_on_update: true
+           delete_on_remove: true

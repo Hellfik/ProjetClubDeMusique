@@ -32,7 +32,7 @@
                         <td class="align-middle">{{ compteur }}</td>
                         <td class="align-middle">{{ musicien.nom }}</td>
                         <td class="align-middle">{{ musicien.prenom }}</td>
-                        <td class="align-middle">{{ musicien.photos }}</td>
+                        <td class="align-middle">{{ musicien.imageName }}</td>
                         <td colspan="2"><a href="{{path('admin_edit_musiciens', {'id' : musicien.id})}}" class="btn btn-success m-2">Modifier</a><a href="{{path('admin_delete_musiciens', {'id' : musicien.id})}}" class="btn btn-danger m-2">Supprimer</a></td>
                     </tr>
                     {% endfor %}
@@ -42,7 +42,7 @@
         <ul>
     </div>
     <div class="navigation d-flex">
-    {{ knp_pagination_render(musiciens) }}
+        {{ knp_pagination_render(musiciens) }}
     </div>
 </div>
 {% endblock %}

@@ -29,3 +29,15 @@
 .count-widget span {
     font-size: 30px;
 }
+
+.edit-pic {
+    cursor: pointer;
+}
+
+.edit-pic:hover {
+    color: #77b300;
+}
+
+#musicien_imageFile_file {
+    display: none;
+}

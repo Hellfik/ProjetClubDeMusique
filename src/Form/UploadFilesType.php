@@ -2,29 +2,25 @@
 
 namespace App\Form;
 
-use App\Entity\Musiciens;
+use App\Entity\UploadFiles;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Vich\UploaderBundle\Form\Type\VichImageType;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
-class MusicienType extends AbstractType
+class UploadFilesType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            ->add('nom')
-            ->add('prenom')
-            ->add('imageFile', VichImageType::class,[
-                'label' => false
-            ])
+        $builder->
+        add('imageFile', VichFileType::class)
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Musiciens::class,
+            'data_class' => UploadFiles::class,
         ]);
     }
 }

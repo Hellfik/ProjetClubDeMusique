@@ -12,31 +12,31 @@
 
 <div class="swiper-container">
     <div class="container margin jumbotron bg-white col-10">
-      
-            <form class="form-inline my-2 my-lg-0 float-right" method="GET">
-                {% if send %}
-                <input class="form-control mr-sm-2 border-bottom-dark" type="search" name="search" placeholder="Rechercher" aria-label="Search" value="{{search}}"> {% else %}
-                <input class="form-control mr-sm-2 border-bottom" type="search" name="search" placeholder="Rechercher" aria-label="Search"> {% endif %}
-                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Rechercher</button>
-            </form><br><br>
+
+        <form class="form-inline my-2 my-lg-0 float-right" method="GET">
+            {% if send %}
+            <input class="form-control mr-sm-2 border-bottom-dark" type="search" name="search" placeholder="Rechercher" aria-label="Search" value="{{search}}"> {% else %}
+            <input class="form-control mr-sm-2 border-bottom" type="search" name="search" placeholder="Rechercher" aria-label="Search"> {% endif %}
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Rechercher</button>
+        </form><br><br>
 
         <div class="swiper-wrapper musiciens">
-        {% for musicien in musiciens %}
+            {% for musicien in musiciens %}
             <div class="swiper-slide mt-5 mr-2" style="width:12rem; height: 21rem;">
                 <div class="card-title">
-                    <p>Image du musicien</p>
+                    <img src="/images/musiciens/{{musicien.imageName}}" style="height:100%; width:100%;" alt="">
                 </div>
                 <div class="card-content">
-                    <h5 class="d-flex justify-content-center">{{ musicien.nom }}</h5>    
-                    <h5>{{ musicien.prenom }}</h5>           
+                    <h5 class="d-flex justify-content-center">{{ musicien.nom }}</h5>
+                    <h5>{{ musicien.prenom }}</h5>
                 </div>
             </div>
             {% endfor %}
         </div>
         <div class="navigation d-flex justify-content-center">
-        {{ knp_pagination_render(musiciens) }}
-        </div>       
-    </div>        
+            {{ knp_pagination_render(musiciens) }}
+        </div>
+    </div>
 </div>
 
 {% endblock %} {% block javascripts %}
