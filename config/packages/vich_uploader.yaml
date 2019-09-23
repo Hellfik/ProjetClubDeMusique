@@ -5,6 +5,7 @@ vich_uploader:
        pdf:
            uri_prefix: /files/pdf
            upload_destination: '%kernel.project_dir%/public/files/pdf'
+           namer: Vich\UploaderBundle\Naming\UniqidNamer
 
            inject_on_load: false
            delete_on_update: true
@@ -13,6 +14,16 @@ vich_uploader:
        musicien_image:
            uri_prefix: /images/musiciens
            upload_destination: '%kernel.project_dir%/public/images/musiciens'
+           namer: Vich\UploaderBundle\Naming\UniqidNamer
+
+           inject_on_load: false
+           delete_on_update: true
+           delete_on_remove: true
+        
+       article_image:
+           uri_prefix: /images/articles
+           upload_destination: '%kernel.project_dir%/public/images/articles'
+           namer: Vich\UploaderBundle\Naming\UniqidNamer
 
            inject_on_load: false
            delete_on_update: true

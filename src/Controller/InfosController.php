@@ -53,7 +53,7 @@ class InfosController extends AbstractController
             $manager->persist($historique);
             $manager->flush();
 
-            return $this->redirectToRoute('add_historique');
+            return $this->redirectToRoute('admin_historique');
         }
         return $this->render('admin/historique/addHistorique.html.twig', [
             'formHistorique' => $form->createView()

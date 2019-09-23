@@ -5,7 +5,7 @@
     </video>
     <div class="container main">
         <div class="contentBox">
-            <h1 class="h2-responsive mb-3">Club musical de Berck-sur-mer</h1>
+            <h1 class="h2-responsive mb-3" id="titre"></h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et itaque assumenda eum consectetur minus? Quasi, cupiditate. Libero quam impedit, ipsa sint quis vel, tenetur expedita labore commodi non sit dicta pariatur ducimus voluptatibus?</p>
         </div>
     </div>
@@ -108,8 +108,18 @@
 {% endblock %} {% block javascripts %}
 <script>
     var i = 0;
+    var j = 0;
     var txt = 'Sans la musique, la vie serait une erreur...';
+    var txt2 = 'Club musical de Berck-sur-mer';
     var speed = 50;
+    const typing2 = () => {
+        if (j < txt2.length) {
+            document.getElementById('titre').innerHTML += txt2.charAt(j);
+            j++;
+            setTimeout(typing2, speed);
+        }
+
+    };
     const typing = () => {
         if (i < txt.length) {
             document.getElementById("live").innerHTML += txt.charAt(i);
@@ -124,6 +134,12 @@
     };
 
 
+    console.log(document.getElementById('titre'));
+
+
+
+
     typing();
+    typing2();
 </script>
 {% endblock %}

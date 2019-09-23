@@ -70,7 +70,7 @@ class AdminController extends AbstractController
 
     /**
      * Fonction permettant de modifier un utilisateur
-     *@Route("/admin/editUser/{id}", name="admin_edit_user")
+     *@Route("/admin/user/editUser/{id}", name="admin_edit_user")
      * @param User $user
      * @param ObjectManager $manager
      * @param Request $request
@@ -110,7 +110,7 @@ class AdminController extends AbstractController
 
     /**
      * Liste tous les articles de la base de données
-     * @Route("admin/articles", name="admin_articles", methods={"GET", "POST"})
+     * @Route("admin/article", name="admin_articles", methods={"GET", "POST"})
      */
 
     public function showArticles(ArticleRepository $repo){
@@ -146,7 +146,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("admin/editArticle/{id}", name="admin_edit_article")
+     * @Route("admin/article/editArticle/{id}", name="admin_edit_article")
      */
 
     public function editArticle( Article $article, ObjectManager $manager, Request $request){
@@ -168,7 +168,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("admin/addArticle", name="admin_addArticle")
+     * @Route("admin/article/addArticle", name="admin_addArticle")
      */
 
     public function addArticle(Request $request, ObjectManager $manager){

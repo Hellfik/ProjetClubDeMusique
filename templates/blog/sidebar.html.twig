@@ -4,13 +4,13 @@
         <h5 class="card-header text-left">Rechercher</h5>
         <div class="card-body">
             <div class="input-group">
-            <form method='get'>
-            {% if send %}
-                     <input class="form-control mr-sm-2" type="search" name="search" placeholder="Rechercher" aria-label="Search" value="{{search}}"> {% else %}
-                     <input class="form-control mr-sm-2" type="search" name="search" placeholder="Rechercher" aria-label="Search"> {% endif %}
-
-                <span class="input-group-btn">
-                    <button class="btn btn-dark ml-1" type="submit">Rechercher</button>
+                <form method='get' class="form-inline">
+                    {% if send %}
+                    <input class="form-control searchBar" type="search" name="search" placeholder="Rechercher" aria-label="Search" value="{{search}}"> 
+                    {% else %}
+                    <input class="form-control searchBar" type="search" name="search" placeholder="Rechercher" aria-label="Search"> 
+                    {% endif %}
+                    <button class="btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </span>
                 </form>
             </div>
@@ -25,8 +25,10 @@
                 {% for recentArticle in recentArticles %}
                 <div class="col-12">
                     <div class="row">
-                        <a class="col-4 img_widget mb-3 ml-2" href="{{ path('blog_show', {'id': recentArticle.id})}}">
-                            <img src="/image/{{recentArticle.image }}" style="width:70px" alt="... ">
+                        <a class="col-4 pr-0 img_widget" href="{{ path('blog_show', {'id': recentArticle.id})}}">
+                                {% if recentArticle.imageName %}
+                                <img src="{{ vich_uploader_asset(recentArticle, 'imageFile') | imagine_filter('thumb')}}" style="height:100%; width:100%;" alt=""> {% else %}
+                                <img src= "https://i.pravatar.cc/300" style="height:100%; width:100%;" alt=""> {% endif %}
                         </a>
                         <div class="col-6 text-left">
                             <h6>{{recentArticle.title}}</h6>
@@ -41,8 +43,27 @@
     </div>
     <div class="card my-4 bg-white">
         <h5 class="card-header text-left">Infos utiles</h5>
-        <div class="card-body">
+        <div class="card-body text-left">
+            <p><span>Adresse: <br> 150 avenue du Docteur Quettier</span></p>
+            <p><span>President: Mr Lagache <br> 06.11.43.14.75</span></p>
+            <p><span>Directeur: Mr Delmotte <br> 06.86.86.53.15</span></p>
+            <p><span>Cours de solfège</span></p>
+            <p><span>Cours de d'instrument <br> (Saxophone, Trompette, Flûte traversière, Clarinette, Tuba, Trombone, Percussions, Guitare, Piano,...)</span></p>
+            <p> Classe d'Orchestre</p>
 
+            <p>
+                <span>
+                Dès l'âge de 6 ans
+            </span>
+            </p>
+
+            <p>
+                Cours pour adultes
+            </p>
+
+            <p>
+                Inscription début septembre de chaque année
+            </p>
         </div>
     </div>
 </aside>

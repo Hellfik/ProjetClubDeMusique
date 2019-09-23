@@ -107,6 +107,7 @@ class OrchestreController extends AbstractController
             $manager->persist($musicien);
             $manager->flush();
 
+            $this->addFlash('success', 'Le musicien a bien été créé');
             return $this->redirectToRoute('admin_musiciens');
         }
         return $this->render('admin/musiciens/addmusicien.html.twig', [
@@ -132,6 +133,7 @@ class OrchestreController extends AbstractController
             $manager->persist($musiciens);
             $manager->flush();
 
+            $this->addFlash('success','Musicien bien modifié');
             return $this->redirectToRoute('admin_musiciens');
         }
 

@@ -24,7 +24,11 @@
             {% for musicien in musiciens %}
             <div class="swiper-slide mt-5 mr-2" style="width:12rem; height: 21rem;">
                 <div class="card-title">
-                    <img src="/images/musiciens/{{musicien.imageName}}" style="height:100%; width:100%;" alt="">
+                    {% if musicien.imageName %}
+                    <img src="{{ vich_uploader_asset(musicien, 'imageFile') | imagine_filter('thumb')}}" style="height:100%; width:100%;" alt="">
+                    {% else %}
+                    <img src="https://i.pravatar.cc/300" style="height:100%; width:100%;" alt="">
+                    {% endif %}
                 </div>
                 <div class="card-content">
                     <h5 class="d-flex justify-content-center">{{ musicien.nom }}</h5>

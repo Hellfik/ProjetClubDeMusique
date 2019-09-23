@@ -1,5 +1,10 @@
 {% extends 'adminBase.html.twig'%} {% block body %}
 <div class="card col-md-8 mx-auto my-5 px-0">
+    {% for message in app.flashes('success') %}
+    <div class="alert alert-success d-flex justify-content-center">
+        {{ message | upper}}
+    </div>
+    {% endfor %}
     <div class="card-header bg-success">
         <form class="form-inline my-2 my-lg-0" method="GET">
             {% if send %}

@@ -3,6 +3,7 @@
 namespace App\Entity;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -31,7 +32,8 @@ class Musiciens
 
      /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
-     * 
+     * @Assert\Image(
+     *  mimeTypes= "image/jpeg")
      * @Vich\UploadableField(mapping="musicien_image", fileNameProperty="imageName")
      * 
      * @var File
@@ -39,7 +41,7 @@ class Musiciens
     private $imageFile;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      *
      * @var string
      */
