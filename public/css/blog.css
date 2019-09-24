@@ -38,6 +38,10 @@ body {
     outline: none;
 }
 
+.sidebar .card {
+    border-radius: 0 !important;
+}
+
 
 /* Start http://www.cursors-4u.com */
 

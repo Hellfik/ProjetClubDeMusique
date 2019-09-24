@@ -41,3 +41,9 @@
 #musicien_imageFile_file {
     display: none;
 }
+
+.custom-file-label::after {
+    border-radius: 0;
+    background-color: #fff;
+    color: #000;
+}

@@ -15,7 +15,8 @@
                 </div>
                 <div class="form-group">
                     <label for="">Ajouter une photo</label></br>
-                    {{form_row(form.image)}}
+                    {{form_row(form.imageFile)}}
+                    <p id="file-name"></p>
                 </div>
             </div>
             <div class="form-group">
@@ -26,5 +27,14 @@
     </div>
 </div>
 </div>
+
+{% endblock %}
+
+{% block javascripts %}
+<script>
+    $("#article_imageFile_file").change(function(){
+  $("#file-name").text(this.files[0].name);
+});
+</script>
 
 {% endblock %}
