@@ -13,7 +13,8 @@
 
 h4,
 h5,
-ul {
+ul,
+p {
     color: #000 !important;
 }
 
