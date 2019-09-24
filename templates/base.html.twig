@@ -6,8 +6,8 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <link rel="icon" href={{asset( 'image/logo.png')}}>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> {% block stylesheets %}{% endblock %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="{{asset('image/favicon.png')}}"> {% block stylesheets %}{% endblock %}
 </head>
 
 <body>
@@ -45,7 +45,7 @@
                     </div>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="navbar-brand" href="{{ path('home')}}"><img src="{{asset('image/logo.png')}}" style="width:70px; height:78px;" alt=""></a>
+                    <a class="navbar-brand" href="{{ path('home')}}"><img src="{{asset('image/logoCMB.png')}}" style="width:70px; height:78px;" alt=""></a>
                 </li>
                 <li class="nav-item mx-2 dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -74,7 +74,7 @@
 
             <div class="row text-center d-flex align-items-center">
                 <div class="col-md-3 px-5">
-                    <img src="{{asset('image/logo.png')}}" alt="">
+                    <img src="{{asset('image/logoCMB.png')}}" alt="" style="width:200px; height:200px;">
                 </div>
                 <div class="col-md-3 px-5">
 
