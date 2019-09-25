@@ -27,7 +27,6 @@
                                 ECOLE DE MUSIQUE
                             </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">SORTIES ANNUELLES</a>
                         <a class="dropdown-item" href="{{path('instruments')}}">INSTRUMENTS ENSEIGNES</a>
                         <a class="dropdown-item" href="{{ path('professeur')}}">LES PROFESSEURS</a>
                         <a class="dropdown-item" href="">TARIFS D'INSCRIPTION</a>
@@ -37,8 +36,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                                 ORCHESTRE
                             </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{path('sortiesAnnuelles')}}">SORTIES ANNUELLES</a>
+                    <div class="dropdown-menu">                        
                         <a class="dropdown-item" href="{{ path('musiciens') }}">NOS MUSICIENS</a>
                         <a class="dropdown-item" href="{{path('documentsInscription')}}">DOCUMENTS D'INSCRIPTION</a>
                         <a class="dropdown-item" href="{{path('tarifsOrchestre')}}">TARIFS ORCHESTRE</a>
@@ -52,9 +50,10 @@
                                 INFORMATIONS SUPPLEMENTAIRES
                             </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ path('historique')}}">PAGE HISTORIQUE</a>
-                        <a class="dropdown-item" href="{{path('mecenat')}}">PAGE M&Eacute;C&Eacute;NAT</a>
-                        <a class="dropdown-item" href="{{path('revuePresse')}}">PAGE REVUE DE PRESSE</a>
+                        <a class="dropdown-item" href="{{ path('historique')}}">HISTORIQUE</a>
+                        <a class="dropdown-item" href="{{path('mecenat')}}">M&Eacute;C&Eacute;NAT</a>
+                        <a class="dropdown-item" href="{{path('revuePresse')}}">REVUE DE PRESSE</a>
+                        <a class="dropdown-item" href="{{path('sortiesAnnuelles')}}">SORTIES ANNUELLES</a>
                     </div>
                 </li>
                 <li class="nav-item mx-2">
@@ -95,12 +94,13 @@
             </div>
             <div class="container">
                 <div class="row border-top d-flex justify-content-end">
-                    <div class="d-flex">
-                        <div class="p-2 d-flex align-items-center"><i class="fa fa-facebook social" aria-hidden="true"></i>
+                    <div class="d-flex footer-link">
+                        <div class="p-2 d-flex align-items-center"><a href="https://www.facebook.com/Club-Musical-Berckois-et-Ecole-de-Musique-Municipale-de-Berck-sur-Mer-443802849012332/?ref=br_tf&epa=SEARCH_BOX"><i class="fa fa-facebook social" aria-hidden="true"></i></a>
                         </div>
                         <div class="p-2 d-flex align-items-center">Mentions Legales</div>
                         <div class="p-2 d-flex align-items-center">
-                            Plan du site
+                            <a href="{{ path('planDuSite') }}">Plan du site</a>
+                            
                         </div>
                         <div class="p-2 d-flex align-items-center footer-link">
                             <a href="{{path('contact')}}">Nous contacter</a>

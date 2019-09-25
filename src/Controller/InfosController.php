@@ -115,4 +115,12 @@ class InfosController extends AbstractController
     {
         return $this->render('infos/revuePresse.html.twig');
     }
+
+    /**
+   *@Route("/orchestre/sortiesAnnuelles", name="sortiesAnnuelles") 
+   */
+   public function sortiesAnnuelles()
+   {
+       return $this->render('orchestre/sortiesAnnuelles.html.twig');
+   }
 }

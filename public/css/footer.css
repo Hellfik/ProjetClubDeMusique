@@ -1,0 +1,22 @@
+h5, ul {
+    color: black;
+}
+
+.container_block {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bloc {
+    align-items: flex-start;
+    justify-content: space-evenly;
+    
+}
+
+ul {
+    padding-left: 0;
+}
+
+li, h5 {
+    text-align: center;
+}

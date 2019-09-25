@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %} {% block title %}Plan du site{% endblock %} 
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('css/swiper.min.css')}}">
+<link rel="stylesheet" href="{{asset('css/footer.css')}}">
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="jumbotron jumbotron-fluid bg-white mt-5">
+        <h2 class="text-center mb-5">Plan du site</h2>
+        <div class="container_block">
+            <div class="bloc">
+                <h5>Ecole de musique</h5>
+                <ul>
+                    <li><a href="{{ path('instruments') }}">Instruments enseignés</a></li>
+                    <li><a href="{{ path('professeur') }}">Les professeurs</a></li>
+                    <li><a href="">Tarifs d'inscription</a></li>
+                </ul>
+            </div>
+
+                <div class="bloc">
+                <h5>Orchestre</h5>
+                <ul>                    
+                    <li><a href="{{ path('musiciens') }}">Nos musiciens</a></li>
+                    <li><a href="{{ path('documentsInscription') }}">Documents inscription</a></li>
+                    <li><a href="{{ path('tarifsOrchestre') }}">Tarifs orchestre</a></li>
+                </ul>
+            </div>
+
+                <div class="bloc">
+                <h5>Informations<br> supplémentaires</h5>
+                <ul>
+                    <li><a href="{{ path('historique') }}">Historique</a></li>
+                    <li><a href="{{ path('mecenat') }}">Mécénat</a></li>
+                    <li><a href="{{ path('revuePresse') }}">Revue de presse</a></li>
+                    <li><a href="{{ path('sortiesAnnuelles') }}">Sorties annuelles</a></li>
+                </ul>
+            </div>
+
+            <div class="bloc">
+                <h5>Blog</h5>
+                <ul>
+                    <li><a href="{{ path('blog') }}">Blog</a></li>
+                </ul>                
+            </div>
+
+            <div class="bloc">
+                <h5>Contact</h5>
+                <ul>
+                    <li><a href="{{ path('contact') }}">Contact</a></li>
+                </ul>                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

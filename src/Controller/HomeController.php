@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
-use App\Form\ContactType;
 use App\Repository\ArticleRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -29,25 +28,30 @@ class HomeController extends AbstractController
     *@Route("/contact", name="contact") 
     */
     
-    public function contact(Request $request ,\Swift_Mailer $mailer)
+    public function contact(Request $request, \Swift_Mailer $mailer)
     {
-    $defaultData = ['message' => 'Type your message here'];
+    $defaultData = ['message' => 'Votre message'];
     $form = $this->createFormBuilder($defaultData)
         ->add('email', EmailType::class)
         ->add('message', TextareaType::class)
         ->getForm();
 
-    $form->handleRequest($request);
+     $form->handleRequest($request);
 
-    if ($form->isSubmitted() && $form->isValid()) {
-        $message = (new \Swift_Message('Hello Email'))
-        ->setFrom('send@example.com')
-        ->setTo('lecoutrestephane@outlook.com')
-        ->setBody('You should see me from the profiler!')
-    ;
-        dump($message);
-        $mailer->send($message);
-    }
+     if ($form->isSubmitted() && $form->isValid()) {
+        
+        $contact = $form->getData();
+
+        $message = (new \Swift_Message('Email bien evoyé!'))
+            ->setFrom($contact['message'])
+            ->setTo('lecoutrestephane@outlook.com')
+            ->setBody($contact['message'], 'text/plain');
+
+            $mailer->send($message);
+
+            return $this->redirectToRoute('contact');
+
+     }
 
         return $this->render('contact.html.twig', [
             'form' => $form->createView()

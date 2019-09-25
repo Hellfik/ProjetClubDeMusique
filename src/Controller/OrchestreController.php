@@ -14,14 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class OrchestreController extends AbstractController
 {
-    /**
-   *@Route("/orchestre/sortiesAnnuelles", name="sortiesAnnuelles") 
-   */
-   public function sortiesAnnuelles()
-   {
-       return $this->render('orchestre/sortiesAnnuelles.html.twig');
-   }
-
+   
     /**
     *Liste tous les musiciens
     *@Route("/orchestre/musiciens", name="musiciens") 
