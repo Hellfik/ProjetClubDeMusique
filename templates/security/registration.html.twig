@@ -4,32 +4,28 @@
     <div class="col-12 margin ">
         <div class="box">
             <h2 class="cover-heading text-center" id="test">Se créer un compte</h2>
-            {{ form_start(form)}}
+            {{ form_start(form)}} {% if form_errors(form.username) %}
+            <div class="form-error">
+                {{form_errors(form.username) }}
+            </div>
+            {% endif %}
             <div class="inputBox">
-                {% if form_errors(form.username) %}
-                <div class="form-error">
-                    <span class="badge badge-danger">Erreur</span>
-                    <small>{{form_errors(form.username) }}</small>
-                </div>
-                {% endif %}
                 <label for="registration_username"><i class="fa fa-user"></i></label> {{form_widget(form.username, {'attr': {'placeholder' : 'Nom d\'utilisateur', 'autofocus': 'autofocus'}})}}
             </div>
+            {% if form_errors(form.email) %}
+            <div class="form-error">
+                {{form_errors(form.email)}}
+            </div>
+            {% endif %}
             <div class="inputBox">
-                {% if form_errors(form.email) %}
-                <div class="form-error">
-                    <span class="badge badge-danger">Erreur</span>
-                    <small>{{form_errors(form.email)}}</small>
-                </div>
-                {% endif %}
                 <label for="registration_email"><i class="fa fa-at"></i></label> {{form_widget(form.email, {'attr': {'placeholder' : 'Email'}})}}
             </div>
+            {% if form_errors(form.password) %}
+            <div class="form-error">
+                <small> {{form_errors(form.password) }} </small>
+            </div>
+            {% endif %}
             <div class="inputBox">
-                {% if form_errors(form.password) %}
-                <div class="form-error">
-                    <span class="badge badge-danger">Erreur</span>
-                    <small> {{form_errors(form.password) }} </small>
-                </div>
-                {% endif %}
                 <label for="registration_password"><i class="fa fa-lock"></i></label> {{form_widget(form.password, {'attr': {'placeholder' : 'Mot de passe'}})}}
             </div>
             <div class="inputBox">

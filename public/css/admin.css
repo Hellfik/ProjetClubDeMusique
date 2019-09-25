@@ -1,5 +1,5 @@
 .navbar.navbar-expand-lg.navbar-dark {
-    background-color: #cc0000 !important;
+    background-color: #000000 !important;
     border: none !important;
 }
 
@@ -8,8 +8,20 @@
     align-items: center;
 }
 
+.dropdown-menu {
+    background-color: #fff;
+    border-radius: 0;
+    padding: 0px;
+}
+
+.dropdown-item {
+    color: #000;
+    padding: 10px 20px !important;
+}
+
 .dropdown-item:hover {
-    background-color: #cc0000;
+    color: rgb(255, 255, 255) !important;
+    background-color: #000;
 }
 
 .header {
@@ -28,14 +40,6 @@
 .count-widget .fa,
 .count-widget span {
     font-size: 30px;
-}
-
-.edit-pic {
-    cursor: pointer;
-}
-
-.edit-pic:hover {
-    color: #77b300;
 }
 
 #musicien_imageFile_file {

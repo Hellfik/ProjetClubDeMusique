@@ -6,6 +6,7 @@ use App\Entity\FamilleInstruments;
 use App\Entity\Instruments;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -20,6 +21,7 @@ class InstrumentType extends AbstractType
                 'class' => FamilleInstruments::class,
                 'choice_label' => 'nom'
             ])
+            ->add('imageFile', FileType::class)
         ;
     }
 

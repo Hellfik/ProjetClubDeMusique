@@ -16,6 +16,8 @@
                         </th>
                         <th class="th-sm">Famille d'instrument
                         </th>
+                        <th class="th-sm">Image
+                        </th>
                         <th colspan="2" class="th-sm">Actions
                         </th>
                     </tr>
@@ -28,6 +30,8 @@
                         <td class="align-middle">{{instrument.nom}}</td>
                         <td class="align-middle">{{instrument.description | slice(0,20)}} ...</td>
                         <td class="align-middle">{{instrument.familleInstruments.nom}}
+                        </td>
+                        <td class="align-middle">{{instrument.imageName}}
                         </td>
                         <td colspan="2"><a href="{{path('admin_edit_instrument', {'id' : instrument.id})}}" class="btn btn-success m-2">Modifier</a><a href="{{path('admin_delete_instrument', {'id' : instrument.id})}}" class="btn btn-danger m-2">Supprimer</a></td>
                     </tr>

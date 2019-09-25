@@ -3,11 +3,11 @@
 <div class="container">
     <div class="col-12 margin ">
         <div class="box">
-            {% for message in app.flashes('success') %}
+            {% for message in app.flashes('success') %} {% if errors %}
             <div class="alert alert-success">
-                {{ message }}
+                {{ error.messageKey|trans(error.messageData, 'security') }}
             </div>
-            {% endfor %}
+            {% endif %} {% endfor %} {% if errors | length > 0 %} {{ dump(errors) }} {% endif %}
             <h2 class="cover-heading" id="test">Se connecter</h2>
             <form action="{{ path('security_login')}}" method="POST">
                 <div class="inputBox">
@@ -18,6 +18,13 @@
                     <label for="password"><i class="fa fa-lock"></i></label>
                     <input type="password" name="_password" id="password" placeholder="Mot de passe" required>
                 </div>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="remember_me" name="_remember_me" checked>
+                    <label class="form-check-label" style="width:200px;" for="remember_me">Se souvenir de moi</label>
+                </div>
+
+
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                 <div class="inputBox">
                     <button type="submit" class="btn btn-connexion mt-4">Connexion</button>

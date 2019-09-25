@@ -25,16 +25,29 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 3,
+     *      minMessage = "Votre nom d'utilisateur doit faire minimum {{ limit }} caracteres"
+     * )
      */
     private $username;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Email(
+     *     message = "L'email '{{ value }}' n'est pas une adresse valide.",
+     *     checkMX = true
+     * )
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *      min = 8,
+     *      minMessage = "Votre mot de passe doit faire minimum {{ limit }} caractères"
+     * )
      */
     private $password;
 

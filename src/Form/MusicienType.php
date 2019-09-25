@@ -17,7 +17,8 @@ class MusicienType extends AbstractType
             ->add('nom')
             ->add('prenom')
             ->add('imageFile', FileType::class,[
-                'required' => false
+                'required' => false,
+                'label' => false
             ])
         ;
     }

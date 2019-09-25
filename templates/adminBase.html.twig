@@ -21,23 +21,41 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{{path('admin')}}">Tableau de bord</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{path('admin_users')}}">Utilisateurs</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             Admin
+                            </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{path('admin_users')}}">Utilisateurs</a>
+                        <a class="dropdown-item" href="{{path('admin_articles')}}">Articles</a>
+                        <a class="dropdown-item" href="{{path('admin_historique')}}">Historique</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{path('admin_articles')}}">Articles</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         EDM
+                        </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{path('admin_instruments')}}">Instruments</a>
+                        <a class="dropdown-item" href="{{path('admin_famille')}}">Familles</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{path('admin_instruments')}}">Instruments</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             Orchestre
+                            </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{path('admin_musiciens')}}">Musiciens</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{path('admin_famille')}}">Familles</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{path('admin_musiciens')}}">Musiciens</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{path('admin_historique')}}">Historique</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             Professeurs
+                            </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href=""></a>
+                        <a class="dropdown-item" href=""></a>
+                    </div>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">

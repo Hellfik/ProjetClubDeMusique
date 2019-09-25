@@ -218,7 +218,7 @@ class AdminController extends AbstractController
             $manager->persist($instrument);
             $manager->flush();
 
-            return $this->redirectToRoute('admin_instrument');
+            return $this->redirectToRoute('admin_instruments');
         }
 
         return $this->render('admin/instruments/editInstrument.html.twig', [

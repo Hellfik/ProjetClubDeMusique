@@ -29,21 +29,25 @@ class HomeController extends AbstractController
     *@Route("/contact", name="contact") 
     */
     
-    public function contact(Request $request)
+    public function contact(Request $request ,\Swift_Mailer $mailer)
     {
     $defaultData = ['message' => 'Type your message here'];
     $form = $this->createFormBuilder($defaultData)
         ->add('email', EmailType::class)
         ->add('message', TextareaType::class)
-        ->add('send', SubmitType::class)
         ->getForm();
 
-    // $form->handleRequest($request);
+    $form->handleRequest($request);
 
-    // if ($form->isSubmitted() && $form->isValid()) {
-    //     // data is an array with "name", "email", and "message" keys
-    //     $data = $form->getData();
-    // }
+    if ($form->isSubmitted() && $form->isValid()) {
+        $message = (new \Swift_Message('Hello Email'))
+        ->setFrom('send@example.com')
+        ->setTo('lecoutrestephane@outlook.com')
+        ->setBody('You should see me from the profiler!')
+    ;
+        dump($message);
+        $mailer->send($message);
+    }
 
         return $this->render('contact.html.twig', [
             'form' => $form->createView()

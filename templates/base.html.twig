@@ -88,7 +88,9 @@
                     <p>Du lundi au vendredi de 07:30 à 21:15 <br> Le samedi de 08:30 à 18:45 <br> Le dimanche en fonction des projets de 9:00 à 17:15</p>
                 </div>
                 <div class="col-md-3 text-center">
-                    <a href="{{path('security_login')}}" class="btn btn-danger p-3 my-3 connexion">Se connecter</a>
+                    {% if app.user %}
+                    <a href="{{path('security_logout')}}" class="btn btn-danger p-3 my-3 connexion">Se déconnecter</a> {% else %}
+                    <a href="{{path('security_login')}}" class="btn btn-danger p-3 my-3 connexion">Se connecter</a>{% endif %}
                 </div>
             </div>
             <div class="container">

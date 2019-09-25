@@ -27,4 +27,11 @@
 </div>
 </div>
 
+{% endblock %}{% block javascripts %}
+<script>
+    $("#article_imageFile_file").change(function() {
+        $("#file-name").text(this.files[0].name);
+    });
+</script>
+
 {% endblock %}

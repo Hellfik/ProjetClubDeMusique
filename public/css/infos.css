@@ -23,6 +23,12 @@ p {
     font-size: 1.2em !important;
 }
 
+.btn-connexion {
+    border-radius: 0;
+    background-color: #000 !important;
+    color: white;
+}
+
 
 /* Start http://www.cursors-4u.com */
 
