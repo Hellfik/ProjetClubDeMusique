@@ -4,13 +4,13 @@
         <h5 class="card-header text-left">Rechercher</h5>
         <div class="card-body">
             <div class="input-group">
-                <form method='get' class="form-inline">
-                    {% if send %}
-                    <input class="form-control searchBar" type="search" name="search" placeholder="Rechercher" aria-label="Search" value="{{search}}"> 
-                    {% else %}
-                    <input class="form-control searchBar" type="search" name="search" placeholder="Rechercher" aria-label="Search"> 
-                    {% endif %}
-                    <button class="btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            <form method='get'>
+            {% if send %}
+                     <input class="form-control mr-sm-2 bg-dark text-white recherche" type="search" name="search" placeholder="Rechercher" aria-label="Search" value="{{search}}"> {% else %}
+                     <input class="form-control mr-sm-2 bg-dark text-white recherche" type="search" name="search" placeholder="Rechercher" aria-label="Search"> {% endif %}
+
+                <span class="input-group-btn">
+                    <button class="btn btn-dark ml-1" type="submit">Rechercher</button>
                 </span>
                 </form>
             </div>

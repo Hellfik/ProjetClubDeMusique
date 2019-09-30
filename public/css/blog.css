@@ -30,6 +30,9 @@ body {
     width: 500px;
     height: 400px;
 } */
+.recherche::placeholder {
+    color: white;
+}
 
 .searchBar {
     border-bottom: 2px solid rgb(170, 170, 170);
