@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6bcf6bbb3b295967aee45171b9bb2c5a",
+    "content-hash": "0cd70e130915b909b35ebc9e0de74e14",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1468,6 +1468,7 @@
             "time": "2019-04-15T16:29:43+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "fzaninotto/faker",
             "version": "v1.9.0",
             "source": {
@@ -1516,6 +1517,8 @@
             "time": "2019-11-14T13:13:06+00:00"
         },
         {
+=======
+>>>>>>> master
             "name": "imagine/imagine",
             "version": "1.2.2",
             "source": {

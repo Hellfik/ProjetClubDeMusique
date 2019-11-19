@@ -15,11 +15,14 @@
         <ul class="timeline">
             {% for event in events %}
             <li>
+                {# Boucle permettant de mettre une fois sur 2 le texte à droite #}
                 <div class="direction-{% if loop.index0 % 2 == 0 %}r{% else %}l{% endif %}">
                     <div class="flag-wrapper">
                         <span class="hexa"></span>
+                        {# affiche la date #}
                         <span class="time-wrapper"><span class="time">{{event.date}}</span></span>
                     </div>
+                    {# affiche l'évènement #}
                     <div class="desc">{{event.evenements | raw}}</div>
                 </div>
             </li>

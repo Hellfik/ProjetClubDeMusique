@@ -17,8 +17,9 @@ class InfosController extends AbstractController
      * Affiche la page historique
      */
     public function historique(HistoriqueRepository $repo)
-    {
+     {   // Affiche tous les évènements historique de la bdd sur la page
         $events = $repo->findAll();
+        // Retourne vers la page historique
         return $this->render('infos/historique.html.twig',[
             'events' => $events
         ]);
@@ -47,8 +48,10 @@ class InfosController extends AbstractController
     public function AddHistorique(ObjectManager $manager, Request $request)
     {
         $historique = new Historique;
+        //Création du formulaire
         $form = $this->createForm(HistoriqueType::class, $historique);
         $form->handleRequest($request);
+        //Validation de la requête
         if($form->isSubmitted() && $form->isValid()){
             $manager->persist($historique);
             $manager->flush();
@@ -57,6 +60,7 @@ class InfosController extends AbstractController
             return $this->redirectToRoute('admin_historique');
         }
         return $this->render('admin/historique/addHistorique.html.twig', [
+            // création de la vue du formulaire
             'formHistorique' => $form->createView()
         ]);
     }
