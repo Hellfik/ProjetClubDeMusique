@@ -1,4 +1,10 @@
-{% extends 'adminBase.html.twig'%} {% block body %}
+{% extends 'adminBase.html.twig'%} {% block body %} {% for message in app.flashes('success') %}
+<div class="container">
+    <div class="col-md-12 alert alert-success">
+        {{ message }}
+    </div>
+</div>
+{% endfor %}
 <div class="card col-md-8 mx-auto my-5 px-0">
     {% for message in app.flashes('success') %}
     <div class="alert alert-success d-flex justify-content-center">
@@ -6,6 +12,7 @@
     </div>
     {% endfor %}
     <div class="card-header bg-success">
+        <h2>Gérer les Instruments</h2>
         <form class="form-inline my-2 my-lg-0" method="GET">
             {% if send %}
             <input class="form-control mr-sm-2" type="search" name="search" placeholder="Rechercher" aria-label="Search" value="{{search}}"> {% else %}

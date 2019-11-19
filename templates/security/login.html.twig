@@ -1,13 +1,13 @@
-{% extends 'base.html.twig' %} {% block title %}Club de musique de Berck - Login{% endblock %} {% block body %} {% block stylesheets %}
-<link rel="stylesheet" href="{{asset('css/security.css')}}">{% endblock %}
+{% extends 'base.html.twig' %} {% block title %}Club de musique de Berck - Login {% endblock %} {% block stylesheets %}
+<link rel="stylesheet" href="{{asset('css/security.css')}}"> {% endblock %} {% block body %}
 <div class="container">
     <div class="col-12 margin ">
         <div class="box">
-            {% for message in app.flashes('success') %} {% if errors %}
+            {% for message in app.flashes('success') %}
             <div class="alert alert-success">
-                {{ error.messageKey|trans(error.messageData, 'security') }}
+                {{ message }}
             </div>
-            {% endif %} {% endfor %} {% if errors | length > 0 %} {{ dump(errors) }} {% endif %}
+            {% endfor %}
             <h2 class="cover-heading" id="test">Se connecter</h2>
             <form action="{{ path('security_login')}}" method="POST">
                 <div class="inputBox">

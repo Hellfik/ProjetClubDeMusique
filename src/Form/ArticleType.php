@@ -6,7 +6,7 @@ use App\Entity\Article;
 use Symfony\Component\Form\AbstractType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Vich\UploaderBundle\Form\Type\VichImageType;
+
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -23,7 +23,7 @@ class ArticleType extends AbstractType
                     'required' => true
                 ]
             ])
-            ->add('imageFile',VichImageType::class, [
+            ->add('imageFile',FileType::class, [
                 'label' =>false,
             ])
         ;

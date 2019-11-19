@@ -147,6 +147,7 @@ class OrchestreController extends AbstractController
         $manager->remove($musiciens);
         $manager->flush();
 
+        $this->addFlash('success', 'Musicien bien supprimé');
         return $this->redirectToRoute('admin_musiciens');
     }
 

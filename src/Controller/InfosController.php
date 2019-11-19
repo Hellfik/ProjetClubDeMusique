@@ -53,6 +53,7 @@ class InfosController extends AbstractController
             $manager->persist($historique);
             $manager->flush();
 
+            $this->addFlash('success', 'L\'historique a bien été créé');
             return $this->redirectToRoute('admin_historique');
         }
         return $this->render('admin/historique/addHistorique.html.twig', [
@@ -77,6 +78,7 @@ class InfosController extends AbstractController
              $manager->persist($historique);
              $manager->flush();
  
+             $this->addFlash('success', 'L\'historique a bien été modifié');
              return $this->redirectToRoute('admin_historique');
          }
  
@@ -97,6 +99,7 @@ class InfosController extends AbstractController
         $manager->remove($historique);
         $manager->flush();
 
+        $this->addFlash('success', 'L\'historique a bien été supprimé');
         return $this->redirectToRoute('admin_historique');
     }
 

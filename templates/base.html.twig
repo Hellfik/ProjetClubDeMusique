@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
@@ -36,7 +37,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                                 ORCHESTRE
                             </a>
-                    <div class="dropdown-menu">                        
+                    <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{ path('musiciens') }}">NOS MUSICIENS</a>
                         <a class="dropdown-item" href="{{path('documentsInscription')}}">DOCUMENTS D'INSCRIPTION</a>
                         <a class="dropdown-item" href="{{path('tarifsOrchestre')}}">TARIFS ORCHESTRE</a>
@@ -100,7 +101,7 @@
                         <div class="p-2 d-flex align-items-center">Mentions Legales</div>
                         <div class="p-2 d-flex align-items-center">
                             <a href="{{ path('planDuSite') }}">Plan du site</a>
-                            
+
                         </div>
                         <div class="p-2 d-flex align-items-center footer-link">
                             <a href="{{path('contact')}}">Nous contacter</a>

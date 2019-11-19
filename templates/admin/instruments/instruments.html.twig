@@ -1,7 +1,15 @@
-{% extends 'adminBase.html.twig'%} {% block body %}
+{% extends 'adminBase.html.twig'%} {% block body %} {% for message in app.flashes('success') %}
+<div class="container">
+    <div class="col-md-12 alert alert-success">
+        {{ message }}
+    </div>
+</div>
+{% endfor %}
 <div class="card col-md-8 mx-auto my-5 px-0">
     <div class="card-header bg-success">
-        <h2>Gérer les Instruments</h2>
+        <div class="card-header bg-success">
+            <h2>Gérer les Instruments</h2>
+        </div>
     </div>
     <div class="card-body">
         <h5 class="card-title text-center">La liste complète des instruments</h5>

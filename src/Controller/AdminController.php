@@ -70,7 +70,7 @@ class AdminController extends AbstractController
 
     /**
      * Fonction permettant de modifier un utilisateur
-     *@Route("/admin/user/editUser/{id}", name="admin_edit_user")
+     * @Route("/admin/user/editUser/{id}", name="admin_edit_user")
      * @param User $user
      * @param ObjectManager $manager
      * @param Request $request
@@ -85,6 +85,7 @@ class AdminController extends AbstractController
             $manager->persist($user);
             $manager->flush();
 
+            $this->addFlash('success', 'L\'utilisateur a bien été modifié');
             return $this->redirectToRoute('admin_users');
         }
 
@@ -142,6 +143,7 @@ class AdminController extends AbstractController
         $manager->remove($article);
         $manager->flush();
 
+        $this->addFlash('success', 'L\'historique a bien été supprimé');
         return $this->redirectToRoute('admin_articles');
     }
 
@@ -158,6 +160,7 @@ class AdminController extends AbstractController
             $manager->persist($article);
             $manager->flush();
 
+            $this->addFlash('success', 'L\'article a bien été modifié');
             return $this->redirectToRoute('admin_articles');
         }
 
@@ -179,12 +182,12 @@ class AdminController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
             $article->setCreatedAt(new \DateTime());
-            $file = $form->get('image')->getData();
-            $fileName = md5(uniqid()).'.'.$file->guessExtension();
-            $file->move($this->getParameter('upload_directory'), $fileName);
-            $article->setImage($fileName);
+            
+            
             $manager->persist($article);
             $manager->flush();
+
+            $this->addFlash('success', 'L\'article a bien été créé');
 
             return $this->redirectToRoute('blog_show', ['id' => $article->getId()]);
         }
@@ -218,6 +221,7 @@ class AdminController extends AbstractController
             $manager->persist($instrument);
             $manager->flush();
 
+            $this->addFlash('success', 'L\'instrument a bien été modifié');
             return $this->redirectToRoute('admin_instruments');
         }
 
@@ -236,6 +240,7 @@ class AdminController extends AbstractController
         $manager->remove($instrument);
         $manager->flush();
 
+        $this->addFlash('success', 'L\'instrument a bien été supprimé');
         return $this->redirectToRoute('admin_instruments');
      }
 
@@ -262,6 +267,7 @@ class AdminController extends AbstractController
             $manager->persist($instrument);
             //Insert le nouvel instrument en base
             $manager->flush();
+            $this->addFlash('success', 'L\'instrument a bien été créé');
             //Une fois l'operation insertion terminée, on est redirigé vers la page des instruments
             return $this->redirectToRoute('instruments');
         }
@@ -294,6 +300,7 @@ class AdminController extends AbstractController
             $manager->persist($familleInstrument);
             $manager->flush();
 
+            $this->addFlash('success', 'La famille d\'instrument été modifiée');
             return $this->redirectToRoute('admin_famille');
         }
 
@@ -334,6 +341,7 @@ class AdminController extends AbstractController
             $manager->persist($famille);
             $manager->flush();
 
+            $this->addFlash('success', 'La famille d\'instrument a bien été ajoutée');
             return $this->redirectToRoute('admin_famille');
         }
 

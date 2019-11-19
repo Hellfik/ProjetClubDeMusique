@@ -1,4 +1,10 @@
-{% extends 'adminBase.html.twig' %} {% block body %}
+{% extends 'adminBase.html.twig' %} {% block body %} {% for message in app.flashes('success') %}
+<div class="container mt-3">
+    <div class="col-md-12 alert alert-success">
+        {{ message }}
+    </div>
+</div>
+{% endfor %}
 
 <div class="card col-md-8 mx-auto my-5 px-0">
     <div class="card-header bg-success">
@@ -28,7 +34,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% set compteur = 0 %} {% for user in users %} 
+                    {% set compteur = 0 %} {% for user in users %}
                     <tr class="text-center h-100">
                         {% set compteur = compteur + 1 %}
                         <td class="align-middle">{{ compteur }}</td>
@@ -36,9 +42,12 @@
                         <td class="align-middle">{{user.email}}</td>
                         <td class="align-middle">{% for role in user.roles %} {{role | lower}} {% endfor %}
                         </td>
-                        <td colspan="2"><a href="{{path('admin_edit_user', {'id' : user.id})}}" class="btn btn-success m-2">Modifier</a><a href="{{path('admin_delete_user', {'id' : user.id})}}" class="btn btn-danger m-2">Supprimer</a></td>
+                        <td colspan="2">
+                            <a href="{{path('admin_edit_user', {'id' : user.id})}}" class="btn btn-success m-2">Modifier</a>
+                            <a href="{{path('admin_delete_user', {'id' : user.id})}}" class="btn btn-danger m-2">Supprimer</a>
+                        </td>
                     </tr>
-                     {% endfor %}
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

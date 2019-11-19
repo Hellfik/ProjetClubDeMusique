@@ -40,7 +40,7 @@ class UserRepository extends ServiceEntityRepository
     }
 
     /**
-     * Retourne la les resultats de la recherche
+     * Retourne le resultat de la recherche
      */
 
     public function findFilter($search){

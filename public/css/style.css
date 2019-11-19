@@ -34,6 +34,10 @@ a:hover {
     font-size: 15px;
 }
 
+.navbar.navbar-expand-lg {
+    height: 80px !important;
+}
+
 .navbar.navbar-expand-lg.fixed-top a:hover {
     /* border-bottom: 2px solid rgb(139, 139, 139); */
     color: rgb(139, 139, 139)!important;
@@ -359,6 +363,12 @@ footer .row {
 
 
 /* End http://www.cursors-4u.com */
+
+@media all and (max-width: 991px) {
+    .navbar.navbar-expand-lg {
+        height: auto !important;
+    }
+}
 
 @media all and (max-width: 678px) {
     #about-bg-diagonal-left,

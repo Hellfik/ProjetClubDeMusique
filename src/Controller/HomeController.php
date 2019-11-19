@@ -2,13 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\Contact;
-use App\Repository\ArticleRepository;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -16,24 +12,30 @@ class HomeController extends AbstractController
 {
     /**
      * @Route("/", name="home")
+     *
      */
-    public function index(ArticleRepository $repo)
+    public function index()
     {
-        $recentArticles = $repo->findThreeMostRecent();
-        return $this->render('home/index.html.twig',[
-            'recentArticles' => $recentArticles
-        ]);
+        return $this->render('home/index.html.twig');
     }
+
+    
     /**
     *@Route("/contact", name="contact") 
     */
     
     public function contact(Request $request, \Swift_Mailer $mailer)
     {
-    $defaultData = ['message' => 'Votre message'];
-    $form = $this->createFormBuilder($defaultData)
-        ->add('email', EmailType::class)
-        ->add('message', TextareaType::class)
+    
+    $form = $this->createFormBuilder()
+        ->add('email', EmailType::class, [
+            'attr' => [
+                'placeholder' => 'Votre email']
+        ])
+        ->add('message', TextareaType::class, [
+            'attr' => [
+                'placeholder' => 'Votre message']
+        ])
         ->getForm();
 
      $form->handleRequest($request);
