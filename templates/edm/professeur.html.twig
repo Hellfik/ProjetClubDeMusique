@@ -5,55 +5,74 @@
     <h2 class="h1 text-white">Nos professeurs</h2>
 </div>
 <!-- Swiper -->
+<div class="prof_intro text-center">
+    <h2>Des musiciens confirmés</h2>
+    <div class="container d-flex justify-content-center align-items-center">
+        <div style="width:120px; height:3px; background-color:brown"></div>
+        <img src="{{asset('image/teacher.svg')}}" width="60px" height="60px" class="mx-3" />
+        <div style="width:120px; height:3px; background-color:brown"></div>
+    </div>
+    <p>Nos professeurs viennent de tous <strong>horizons</strong> et ont chacun un parcours <strong>riche et diversifié</strong>.</p>
+    <p>Ils se mettent au service de votre <strong>musique</strong> !</p>
+</div>
 <div class="swiper-container">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
             <div class="card-title">
-                <h3>Image du professeur</h3>
+                <img src="{{asset('images/musiciens/Capture3.png')}}" alt="">
             </div>
             <div class="card-content">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, libero. Numquam fuga quam amet eveniet minus, nesciunt reprehenderit, sit quia sint ad expedita magni laudantium dolore ut repudiandae tenetur. Dolorum!</p>
-                <a href="#">Read more</a>
+                <h5>Jean-françois Aubel</h5>
+                <p class="mt-4"><em>Enseigne la <span style="color:brown">clarinette</span> et le <span style="color:brown">saxophone</span></em></p>
             </div>
         </div>
         <div class="swiper-slide">
             <div class="card-title">
-                <h3>Image du professeur</h3>
+                <img src="{{asset('images/musiciens/teacher2.png')}}" alt="">
             </div>
             <div class="card-content">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, libero. Numquam fuga quam amet eveniet minus, nesciunt reprehenderit, sit quia sint ad expedita magni laudantium dolore ut repudiandae tenetur. Dolorum!</p>
-                <a href="#">Read more</a>
+                <h5>Fabien Roger</h5>
+                <p class="mt-4"><em>Enseigne les <span style="color:brown">percussions</span></em></p>
+
             </div>
         </div>
         <div class="swiper-slide">
             <div class="card-title">
-                <h3>Image du professeur</h3>
+                <img src="{{asset('images/musiciens/teacher3.png')}}" alt="">
             </div>
             <div class="card-content">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, libero. Numquam fuga quam amet eveniet minus, nesciunt reprehenderit, sit quia sint ad expedita magni laudantium dolore ut repudiandae tenetur. Dolorum!</p>
-                <a href="#">Read more</a>
+                <h5>Frédéric Delmotte</h5>
+                <p class="mt-4"><em>Enseigne le <span style="color:brown">piano</span>, la <span style="color:brown">trompette</span>, la <span style="color:brown">flute</span>, le <span style="color:brown">baryton</span>, et le <span style="color:brown">trombonne</span></em></p>
+
             </div>
         </div>
         <div class="swiper-slide">
             <div class="card-title">
-                <h3>Image du professeur</h3>
+                <img src="{{asset('images/musiciens/teacher4.png')}}" alt="">
             </div>
             <div class="card-content">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, libero. Numquam fuga quam amet eveniet minus, nesciunt reprehenderit, sit quia sint ad expedita magni laudantium dolore ut repudiandae tenetur. Dolorum!</p>
-                <a href="#">Read more</a>
+                <h5>Denis Letendart</h5>
+                <p class="mt-4"><em>Enseigne la <span style="color:brown">guitare</span>, la <span style="color:brown">trompette</span>, et le <span style="color:brown">solfège</span></em></p>
+
             </div>
         </div>
         <div class="swiper-slide">
             <div class="card-title">
-                <h3>Image du professeur</h3>
+                <img src="{{asset('images/musiciens/teacher5.png')}}" alt="">
             </div>
             <div class="card-content">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, libero. Numquam fuga quam amet eveniet minus, nesciunt reprehenderit, sit quia sint ad expedita magni laudantium dolore ut repudiandae tenetur. Dolorum!</p>
-                <a href="#">Read more</a>
+                <h5>Marie-chistine Gobert</h5>
+                <p class="mt-4"><em>Enseigne le <span style="color:brown">piano</span</em></p>
+
             </div>
         </div>
 
     </div>
+</div>
+<div class="container d-flex justify-content-center align-items-center my-5">
+    <div style="width:120px; height:3px; background-color:brown"></div>
+    <img src="{{asset('image/teacher.svg')}}" width="60px" height="60px" class="mx-3" />
+    <div style="width:120px; height:3px; background-color:brown"></div>
 </div>
 {% endblock %} {% block javascripts %}
 <script src="{{asset('js/swiper.min.js')}}"></script>
@@ -68,7 +87,7 @@
             stretch: 0,
             depth: 100,
             modifier: 1,
-            slideShadows: true,
+            slideShadows: false,
         },
         pagination: {
             el: '.swiper-pagination',

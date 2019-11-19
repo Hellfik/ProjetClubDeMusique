@@ -368,6 +368,9 @@ footer .row {
     .navbar.navbar-expand-lg {
         height: auto !important;
     }
+    .margin {
+        margin-top: 53px;
+    }
 }
 
 @media all and (max-width: 678px) {

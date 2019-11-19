@@ -33,6 +33,7 @@
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
+    /* background-image: url(https://www.passion-music.fr/wp-content/uploads/2017/08/event-bg.png); */
 }
 
 .swipper-wrapper {
@@ -46,7 +47,12 @@
 
 .swiper-slide {
     width: 400px;
-    height: 500px;
+    height: 400px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: linear-gradient(135deg, #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%);
+    ;
+    padding: 10px;
 }
 
 .card-title {
@@ -55,24 +61,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000;
     color: white;
 }
 
-.card-content a {
-    display: inline-block;
-    text-decoration: none;
-    color: #262626;
-    border: 2px solid #262626;
-    font-weight: 600;
-    margin: 10px 0 0;
-    padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0);
+.card-title img {
+    width: 50%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 .card-content {
     padding: 30px;
     text-align: center;
+    color: #fff;
+}
+
+.prof_intro {
+    font-size: 1.2rem;
 }
 
 
