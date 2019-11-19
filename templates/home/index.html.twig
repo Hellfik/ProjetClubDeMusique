@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %} {% block title %}Club de musique Berckois{% endblock %} {% block body %}
 <section class="margin jumbotron banner jumbotron-fluid text-center">
+    {# Video en boucle #}
     <video id="video" autoplay="true" loop muted>
         <source src="{{asset('image/video.mp4')}}"></source>
     </video>

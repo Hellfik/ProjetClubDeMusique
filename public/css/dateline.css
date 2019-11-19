@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,900);
+@import url('https://fonts.googleapis.com/css?family=Amaranth&display=swap');
 
 .bandeau_instrument {
   background-image: url('../image/music.jpg') !important;
@@ -25,6 +25,7 @@ header h1{
 section {
   opacity: 0.9 !important;
 }
+/* hexagone sur la ligne */
 .hexa{
   border: 0px;
   float: left;
@@ -61,8 +62,8 @@ section {
   border-top: 15px solid #f0f0f0;
   bottom: -15px;
 }
-
-.timeline {
+/* ligne timeline */
+ .timeline {
   position: relative;
   padding: 0;
   width: 100%;
@@ -93,7 +94,7 @@ section {
 
 .timeline li {
   padding: 2em 0;
-}
+} 
 
 .timeline .hexa{
   width: 16px;
@@ -146,7 +147,7 @@ section {
   text-align: left;
   border-radius: 5px;
 }
-
+/* Direction comment */
 .direction-l .flag:after,
 .direction-r .flag:after {
   content: "";
@@ -173,7 +174,7 @@ section {
   -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
   box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
 }
-
+/* Flag Date */
 .time-wrapper {
   display: block;
   position: relative;

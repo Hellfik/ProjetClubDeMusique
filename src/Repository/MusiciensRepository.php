@@ -14,24 +14,24 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  */
 class MusiciensRepository extends ServiceEntityRepository
 {
-    public function __construct(RegistryInterface $registry)
-    {
-        parent::__construct($registry, Musiciens::class);
-    }
+     public function __construct(RegistryInterface $registry)
+     {
+         parent::__construct($registry, Musiciens::class);
+     }
 
-    /**
-     * Retourne la les resultats de la recherche
-     */
+     /**
+      * Retourne la les resultats de la recherche
+      */
 
-     public function findFilter($search){
-        return $this->createQueryBuilder('p')
-                    ->where('p.nom like :search')
-                    ->orWhere('p.prenom like :search')
-                    ->setParameter('search', '%' . $search . '%')
-                    ->getQuery()
-                    ->getResult()
-                    ;
-    }
+      public function findFilter($search){
+         return $this->createQueryBuilder('p')
+                     ->where('p.nom like :search')
+                     ->orWhere('p.prenom like :search')
+                     ->setParameter('search', '%' . $search . '%')
+                     ->getQuery()
+                     ->getResult()
+                     ;
+     }
 
 
 

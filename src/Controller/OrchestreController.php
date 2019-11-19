@@ -26,7 +26,7 @@ class OrchestreController extends AbstractController
             //Requête en fonction de la recherche de l'utilisateur
             $musiciens = $paginator->paginate(
                 $repo->findFilter($_GET['search']),
-                $request->query->getInt('page', 1),8
+                $request->query->getInt('page', 1),12
             );
 
             //Stock la recherche dans une variable
